@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТАИР - Спортивный клуб</title>
+    <script src="{{ url('frontend/js/import-footer-header.js')}}" defer></script>
+
+    <link rel="stylesheet" href="{{ url('frontend/css/styles.css')}}">
+    <link rel="stylesheet" href="{{ url('frontend/css/modal/style-contact-us.css')}}">
+
+    <!--  стили reviews -->
+    <link rel="stylesheet" href="{{ url('frontend/css/style-reviews.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick-theme.css')}}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/style-schedule.css')}}"/>
+</head>
+
+<body>
+
+
+<div id="header-container"></div>
+
+
+<section class="hero">
+    <div class="hero-content">
+        <!-- <img src="src/assets/hero_photo.png" alt="Фото главной страницы"> -->
+        <p class="hero-subtitle">СПОРТИВНЫЙ КЛУБ</p>
+        <button class="button-base cta-button js-open-modal">ЗАПИСАТЬСЯ</button>
+    </div>
+</section>
+
+
+<section class="about-club" id="about-club">
+    <div class=" about-club-content">
+        <div class="about-club-image">
+            <img src="{{ url('frontend/src/img/about-club-image.png')}}" alt="Боец ТАИР в клетке на ММА">
+        </div>
+
+        <div class="about-club-text-and-image">
+            <h2>О клубе ТАИР</h2>
+            <p>Спортивный клуб ТАИР — здесь каждый тренируется как чемпион и результаты говорят сами за себя! Мы
+                предлагаем
+                тренировки для всех возрастов, пола и уровня подготовки</p>
+
+            <div class="about-club-group-image">
+                <img src="{{ url('frontend/src/img/about-club-image1.png')}}" alt="Группа бойцов ТАИР">
+            </div>
+        </div>
+    </div>
+    <div class="about-club-button ">
+        <button class="button-base cta-button cta-about-club-button" onclick="goToPageAboutClub()">Узнать больше
+        </button>
+    </div>
+</section>
+
+
+<!-- Секция "Наши направления" -->
+<section class="directions" id="directions">
+    <article class="container container-directions">
+        <h2 class="section-title">Наши направления</h2>
+        <div class="directions-grid">
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/mma.jpg')}}" alt="ММА">
+                <div class="card-content">
+                    <h3>ММА</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/health_pe.png')}}" alt="Лечебная физкультура">
+                <div class="card-content">
+                    <h3>Лечебная физкультура</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/arb.jpg')}}" alt="Армейский рукопашный бой">
+                <div class="card-content">
+                    <h3>Армейский рукопашный бой</h3>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/ofp_pe.png')}}" alt="Общефиз подготовка">
+                <div class="card-content">
+                    <h3>Общефиз подготовка</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/adaptive_pe.png')}}" alt="Адаптивная физкультура">
+                <div class="card-content">
+                    <h3>Адаптивная физкультура</h3>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/pankration.jpg')}}" alt="Панкратион">
+                <div class="card-content">
+                    <h3>Панкратион</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/universal_boy.jpg')}}" alt="Универсальный бой">
+                <div class="card-content">
+                    <h3>Универсальный бой</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/summer_camp.jpg')}}" alt="Летний лагерь">
+                <div class="card-content">
+                    <h3>Летний лагерь</h3>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="{{ url('frontend/src/img/directions/competitions.png')}}" alt="Соревнования">
+                <div class="card-content">
+                    <h3>Соревнования</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </article>
+
+    <!-- наши филиалы -->
+    <article class="container branch-container" id="branch-container">
+        <h2 class="section-title">Наши филиалы</h2>
+        <div class="branches-grid">
+            <!-- филиал 1 -->
+            <article class="branch-card">
+                <h3>АКАДЕМГОРОДОК</h3>
+                <div class="branch-info">
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/point-icon.png')}}" alt="метка" class="branch-info-icon">
+                        <span>Проспект Академический, 17</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/coach-icon.png')}}" alt="тренер" class="branch-info-icon">
+                        <div class="column">
+                            <span>Ярослав Таран</span>
+                            <span>Некрасова Ирина</span>
+                            <span>Максим Кашников</span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/phone-icon.png')}}" alt="телефон" class="branch-info-icon">
+                        <div class="column">
+                            <span>+7 952 889 45 15</span>
+                            <span>+7 913 800 53 68</span>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="{{ url('frontend/src/img/branchs/red-box-gloves.png')}}" alt="Перчатки" class="gloves-icon-red">
+            </article>
+
+            <!-- филиал 2 -->
+            <article class="branch-card">
+                <h3>ШКОЛА №53</h3>
+                <div class="branch-info">
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/point-icon.png')}}" alt="метка" class="branch-info-icon">
+                        <span>Ул. Бела-Куна, 1</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/coach-icon.png')}}" alt="тренер" class="branch-info-icon">
+                        <div class="column">
+                            <span>Ярослав Таран</span>
+                            <span>Максим Кашников</span>
+                            <span>Савелий Бусыгин</span>
+                        </div>
+
+                    </div>
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/phone-icon.png')}}" alt="телефон" class="branch-info-icon">
+                        <span>+7 952 889 45 15</span>
+                    </div>
+                </div>
+                <img src="{{ url('frontend/src/img/branchs/black-box-gloves.png')}}" alt="Перчатки" class="gloves-icon-black">
+            </article>
+        </div>
+        <!-- филиал 3 -->
+        <div class="last-branch-card">
+            <article class="branch-card">
+                <h3>СК "МЕТЕОР"</h3>
+                <div class="branch-info">
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/point-icon.png')}}" alt="метка" class="branch-info-icon">
+                        <span>СК “Метеор” Ул. Калужская 17/2</span>
+                    </div>
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/coach-icon.png')}}" alt="тренер" class="branch-info-icon">
+                        <div class="column">
+                            <span>Ярослав Таран</span>
+                            <span>Максим Кашников</span>
+                        </div>
+
+                    </div>
+                    <div class="info-item">
+                        <img src="{{ url('frontend/src/assets/phone-icon.png')}}" alt="телефон" class="branch-info-icon">
+                        <span>+7 952 889 45 15</span>
+                    </div>
+                </div>
+                <img src="{{ url('frontend/src/img/branchs/blue-branch.png')}}" alt="Перчатки" class="gloves-icon-black">
+            </article>
+            <button class="button-base cta-button cta-view-the-halls-button"
+                    onclick="goToPageHallsAdventure()">
+                Посмотреть залы
+            </button>
+        </div>
+
+
+    </article>
+</section>
+
+
+<section class="schedule-section" id="schedule-section">
+    <h2 class="schedule-title section-title">Расписание</h2>
+
+    <!-- ===== БЛОК 1: Пр. Академический, 17 ===== -->
+    <section class="schedule-block">
+        <div class="schedule-header">
+            <h3 class="schedule-block-title">Пр. Академический, 17</h3>
+            <div class="schedule-categories">
+                <span class="cat">ЛФК</span>
+                <span class="cat">ОФП</span>
+                <span class="cat">АФК</span>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="schedule-table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>ПН</th>
+                    <th>ВТ</th>
+                    <th>СР</th>
+                    <th>ЧТ</th>
+                    <th>ПТ</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="row-label">ОФП + ЛФК</td>
+                    <td>18:00 — 19:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>18:00 — 19:00</td>
+                </tr>
+                <tr>
+                    <td class="row-label">ОФП + Игровые технологии</td>
+                    <td></td>
+                    <td>18:00 — 19:00</td>
+                    <td></td>
+                    <td>18:00 — 19:00</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="row-label">Адаптивная гимнастика + ОФП + Фитнес-технологии</td>
+                    <td>19:00 — 20:00</td>
+                    <td></td>
+                    <td>19:00 — 20:00</td>
+                    <td></td>
+                    <td>19:00 — 20:00</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- ===== БЛОК 2: Единоборства ===== -->
+    <article class="schedule-block">
+        <div class="schedule-header">
+            <h3 class="schedule-block-title">Единоборства</h3>
+            <div class="schedule-categories">
+                <span class="cat">ММА</span>
+                <span class="cat">АРБ</span>
+                <span class="cat">Рукопашный бой</span>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table class="schedule-table schedule-table--wide">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>ПН</th>
+                    <th>ВТ</th>
+                    <th>СР</th>
+                    <th>ЧТ</th>
+                    <th>ПТ</th>
+                    <th>СБ</th>
+                </tr>
+                </thead>
+                <tbody>
+                <!-- Пр. Академический, 17 -->
+                <tr>
+                    <td class="row-label address-label">Пр. Академический, 17</td>
+                    <td></td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">19:00 — 20:00</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">20:00 — 21:30</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">19:00 — 20:00</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">20:00 — 21:30</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">19:00 — 20:00</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">20:00 — 21:30</span>
+                        </div>
+                    </td>
+                </tr>
+                <!-- Ул. Бела Куна, 1 -->
+                <tr>
+                    <td class="row-label address-label">Ул. Бела Куна, 1</td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">18:30 — 19:30</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">19:30 — 21:00</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">18:30 — 19:30</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">19:30 — 21:00</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">18:30 — 19:30</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">19:30 — 21:00</span>
+                        </div>
+                    </td>
+                    <td></td>
+                </tr>
+                <!-- Ул. Калужская, 17/2 -->
+                <tr>
+                    <td class="row-label address-label">Ул. Калужская, 17/2</td>
+                    <td></td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">19:00 — 20:00</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">20:00 — 21:30</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">19:00 — 20:00</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">20:00 — 21:30</span>
+                        </div>
+                    </td>
+                    <td></td>
+                    <td>
+                        <div class="group">
+                            <span class="group-name">Младшая группа</span>
+                            <span class="group-time">17:00 — 18:00</span>
+                        </div>
+                        <div class="group">
+                            <span class="group-name">Старшая группа</span>
+                            <span class="group-time">18:00 — 19:00</span>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </article>
+
+</section>
+
+
+<!-- секция Соревнования -->
+<section class="competitions" id="competitions">
+    <div class="container container-competitions">
+        <h2 class="section-title">Соревнования в которых мы участвовали</h2>
+        <div class="competitions-slider">
+
+            <div class="slider-track">
+
+                <div class="slide">
+                    <img src="{{ url('frontend/src/img/competitions/comp-1.png')}}" alt="Кубок памяти бойцам 1454 МСП">
+                    <div class="slide-caption">Кубок памяти бойцам 1454 МСП</div>
+                </div>
+
+
+                <div class="slide">
+                    <img src="{{ url('frontend/src/img/competitions/comp-2.png')}}" alt="Кубок Томской области по панкратиону">
+                    <div class="slide-caption">Кубок Томской области по панкратиону</div>
+                </div>
+
+
+                <div class="slide">
+                    <img src="{{ url('frontend/src/img/competitions/comp-3.png')}}" alt="Совместные спарринги с клубом Матадор">
+                    <div class="slide-caption">Совместные спарринги с клубом Матадор</div>
+                </div>
+
+
+                <div class="slide">
+                    <img src="{{ url('frontend/src/img/competitions/comp-4.png')}}" alt="ЧиП ММА Томской области">
+                    <div class="slide-caption">ЧиП ММА Томской области</div>
+                </div>
+
+
+                <div class="slide">
+                    <img src="{{ url('frontend/src/img/competitions/comp-5.png')}}"
+                         alt="Традиционный фестиваль Кубок Победы по Армейсому Рукопашному бою среди спортивных клубов городов Сибири">
+                    <div class="slide-caption">Традиционный фестиваль Кубок Победы по Армейсому Рукопашному бою среди
+                        спортивных
+                        клубов городов Сибири
+                    </div>
+                </div>
+
+
+                <div class="slide">
+                    <img src="{{ url('frontend/src/img/competitions/comp-1.png')}}" alt="Кубок памяти бойцам 1454 МСП">
+                    <div class="slide-caption">Кубок памяти бойцам 1454 МСП</div>
+                </div>
+
+
+                <div class="slide">
+                    <img src="{{ url('frontend/src/img/competitions/comp-2.png')}}" alt="Кубок Томской области по панкратиону">
+                    <div class="slide-caption">Кубок Томской области по панкратиону</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- секция Почему выбирают нас -->
+<section class="why-us" id="why-us">
+    <div class="container container-why-us">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <div class="why-us-flex">
+
+            <div class="why-card">
+                <div class="card-text">
+                    <h3>УДОБНЫЕ ЗАЛЫ</h3>
+                </div>
+                <div><img src="{{ url('frontend/src/img/why-us/comfort-halls.png')}}" alt="Удобные залы"></div>
+            </div>
+
+
+            <div class="why-card">
+                <div><img src="{{ url('frontend/src/img/why-us/high-quality-to-training.jpg')}}"
+                          alt="Качественно относимся к тренерскому делу"></div>
+                <div class="card-text">
+                    <h3>КАЧЕСТВЕННОЕ<br>ОТНОШЕНИЕ<br>К ТРЕНЕРСТВУ</h3>
+                </div>
+            </div>
+
+
+            <div class="why-card">
+                <div class="card-text top">
+                    <h3>ЭКИПИРОВКА ВЫДАЁТСЯ</h3>
+                </div>
+                <div><img src="{{ url('frontend/src/img/why-us/gear.png')}}" alt="Экипировка выдаётся"></div>
+            </div>
+
+
+            <div class="why-card">
+                <div><img src="{{ url('frontend/src/img/why-us/friendly-staff.png')}}" alt="Дружный коллектив"></div>
+                <div class="card-text bottom">
+                    <h3>ДРУЖНЫЙ КОЛЛЕКТИВ</h3>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Секция Летний лагерь и сдача на берет -->
+<section class="summer-camp" id="summer-camp">
+    <div class="container container-summer-camp">
+        <h2 class="section-title">Летний лагерь и сдача на берет</h2>
+        <div class="summer-camp-content">
+            <div class="summer-camp-flex">
+                <div class="summer-camp-card">
+                    <div><img src="{{ url('frontend/src/img/summer-camp/trainings.png')}}" alt="Тренировки"></div>
+                    <div>
+                        <h3>Тренировки</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="summer-camp-flex">
+                <div class="summer-camp-card">
+                    <div><img src="{{ url('frontend/src/img/summer-camp/parties.png')}}" alt="Развлечения"></div>
+                    <div>
+                        <h3>Развлечения</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="summer-camp-flex">
+                <div class="summer-camp-card">
+                    <div><img src="{{ url('frontend/src/img/summer-camp/berret.png')}}" alt="Сдача на берет"></div>
+                    <div>
+                        <h3>Сдача на берет</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-cta-button-summer-camp">
+            <button class="button-base cta-button-summer-camp" onclick="goToPageSummerCampBeret()">Больше о лагере
+            </button>
+        </div>
+    </div>
+</section>
+
+
+<div id="reviews-section"></div>
+
+
+<!-- --------------- Часто задаваемые восросы ------------------  -->
+<section class="faq-section" id="faq-section">
+    <div class="container faq-container">
+        <h2 class="section-title">Часто задаваемы вопросы</h2>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <a class="faq-question">Где будут проходить занятия?</a>
+                <div class="faq-answer">
+                    <p>Занятия проходят в спортивных залах по адресу Пр. Академический, 17 или ул. Бела-Куна, 1. Залы
+                        оснащены
+                        всем необходимым оборудованием и мягким покрытием для оттачивания бросков и ударов </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <a class="faq-question">Как проходит занятие?</a>
+                <div class="faq-answer">
+                    <p>Динамично и с пользой! Разминка, затем основная часть и игры. Всё под контролем тренера</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <a class="faq-question">Со скольких лет можно посещать тренировки?</a>
+                <div class="faq-answer">
+                    <p>С 2 до 90 лет! У нас есть программы для малышей, школьников, взрослых и даже пенсионеров. Главное
+                        —
+                        желание двигаться и быть здоровым.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <a class="faq-question">Что надеть на занятие и что нужно взять с собой?</a>
+                <div class="faq-answer">
+                    <p>Одежда: удобная спортивная (штаны/леггинсы/шорты, футболка).
+                        Взять: бутылку воды, полотенце. Снаряжение выдаётся тренером</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <a class="faq-question">Есть ли какие-то противопоказания к занятиям?</a>
+                <div class="faq-answer">
+                    <p>Если у вас хронические заболевания или травмы — обязательно сначала сообщите тренеру. Мы
+                        адаптируем
+                        нагрузку под вас. Безопасность — наш приоритет.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <a class="faq-question">Можно ли будет там пофотографироваться?</a>
+                <div class="faq-answer">
+                    <p>Конечно! Фото и видео — в рамках разрешений. Сделаем красивые кадры с тренировки — для мотивации
+                        и
+                        памяти</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <a class="faq-question">Я никогда не занимался единоборствами, у меня получится?</a>
+                <div class="faq-answer">
+                    <p>Абсолютно! Большинство наших учеников начинали с нуля. Тренер поможет освоить базу, подскажет,
+                        как
+                        правильно двигаться — и через пару занятий вы уже будете чувствовать себя уверенно!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ------------ Контакты ---------------- -->
+<section class="contacts-section" id="contacts">
+    <div class="container container-contacts">
+        <h2 class="section-title">Контакты</h2>
+        <div class="contacts-content">
+            <div class="contacts-three-blocks">
+
+                <div class="contacts-phones contacts-card">
+                    <div class="contacts-header">
+                        <h3>Телефоны</h3>
+                    </div>
+                    <div class="contacts-row container-phone-call" id="call-btn-1" data-phone="+79138005368">
+                        <img src="{{ url('frontend/src/assets/phone-icon.png')}}" class="contacts-icons" alt="Иконка телефона">
+                        <a href="tel:+79138005368" class="contacts-phone-btn">+7-913-800-53-68</a>
+
+                    </div>
+                    <div class="contacts-row container-phone-call" id="call-btn-2" data-phone="+79528894515">
+                        <img src="{{ url('frontend/src/assets/phone-icon.png')}}" class="contacts-icons" alt="Иконка телефона">
+                        <a href="tel:+79528894515" class="contacts-phone-btn">+7-952-889-45-15</a>
+                    </div>
+                </div>
+
+                <div class="contacts-adresses contacts-card">
+                    <h3 class="contacts-header">Адреса</h3>
+
+                    <a class="link-to-2gis " href="https://go.2gis.com/uYSgM">
+                        <div class="contacts-row container-contacts-address" onclick="">
+                            <div class="container-address">
+                                <img src="{{ url('frontend/src/assets/point-icon.png')}}" class="contacts-icons" alt="Иконка метки">
+                                <p>Пр. Академический, 17</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a class="link-to-2gis" href="https://go.2gis.com/l9Eep">
+                        <div class="contacts-row container-contacts-address">
+                            <div class="container-address">
+                                <img src="{{ url('frontend/src/assets/point-icon.png')}}" class="contacts-icons" alt="Иконка метки">
+                                <p>ул. Бела-Куна, 1</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="contacts-messengers contacts-card">
+                    <div class="contacts-header">
+                        <h3>Мессенджеры</h3>
+                    </div>
+                    <div class="container-contacts">
+                        <div class="contacts-row">
+                            <a href="https://t.me/+79528894515" target="_blank" class="modal__messenger-link"
+                               title="Telegram">
+                                <img src="{{ url('frontend/src/assets/icons/telegram-icon.svg')}}" alt="Telegram" loading="lazy">
+                            </a>
+                            <a href="https://vk.ru/im?sel=-202237984" target="_blank" class="modal__messenger-link"
+                               title="VK">
+                                <img src="{{ url('frontend/src/assets/icons/vk-icon.svg')}}" alt="VK" loading="lazy">
+                            </a>
+                            <a href="https://web.max.ru/263696113" class="modal__messenger-link" title="Max">
+                                <img src="{{ url('frontend/src/assets/icons/max-icon.svg')}}" alt="Max" loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-cta-button-sign-up">
+                <button class="button-base js-open-modal cta-button-black-sign-up">ЗАПИСАТЬСЯ</button>
+            </div>
+
+            <!-- карта 2гис -->
+            <div class="contacts-map advantage-item_contacts" id="contacts-map">
+                <a class="dg-widget-link"
+                   href="http://2gis.ru/tomsk/profiles/70000001079701531,70000001095017377,70000001069058584/center/85.06576538085939,56.49642801304434/zoom/13?utm_medium=widget-source&utm_campaign=firmsonmap&utm_source=bigMap">Посмотреть
+                    на карте Томска в 2ГИС</a>
+                <script charset="utf-8" src="https://widgets.2gis.com/js/DGWidgetLoader.js"></script>
+                <script
+                    charset="utf-8">new DGWidgetLoader({
+                        "width": "100%",
+                        "height": 500,
+                        "borderColor": "#a3a3a3",
+                        "pos": {"lat": 56.49642801304434, "lon": 85.06576538085939, "zoom": 12.2},
+                        "opt": {"city": "tomsk"},
+                        "org": [{"id": "70000001079701531"}, {"id": "70000001095017377"}, {"id": "70000001069058584"}]
+                    });</script>
+                <noscript style="color:#c00;font-size:16px;font-weight:bold;">Виджет карты использует JavaScript.
+                    Включите его в настройках вашего браузера.
+                </noscript>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<section class="see-more-section" id="see-more-section">
+    <div class="container see-more-section-container">
+        <div class="see-more-content">
+            <div class="see-more-redirection">
+                <div>
+                    <h2 class="section-title">Больше активностей смотрите в ВК</h2>
+                </div>
+                <div class="see-more-field" onclick="window.open('https://vk.ru/tairtomsk', '_blank');">
+                    <div class="see-more-icon-container">
+                        <img src="{{ url('frontend/src/assets/VK-icon-black.png')}}" alt="Иконка ВК">
+                    </div>
+                    <div>
+                        <p>Перейти в ВК</p>
+                    </div>
+                    <div class="see-more-icon-container vk-transit"><img src="{{ url('frontend/src/assets/btn-pointer.png')}}"
+                                                                         alt="Кнопка перейти"></div>
+                </div>
+            </div>
+            <div>
+                <img src="{{ url('frontend/src/img/see-more/image-club.png')}}" alt="Фото клуба">
+            </div>
+        </div>
+        <div class="container-cta-button-up">
+            <button id="scrollTopBtn" class="button-base cta-up-button" onclick="scrollToTop()">Наверх</button>
+        </div>
+    </div>
+</section>
+
+<div id="footer-container"></div>
+
+
+<script src="{{ url('frontend/js/scripts.js')}}" defer></script>
+<script src="{{ url('frontend/js/open-modal.js')}}"></script>
+
+<!--  reviews-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{{ url('frontend/slick/slick.min.js')}}"></script>
+
+<script src="{{ url('frontend/js/import-reviews.js')}}" defer></script>
+
+</body>
+
+</html>

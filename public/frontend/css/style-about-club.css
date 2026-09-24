@@ -1,0 +1,460 @@
+html {
+    font-size: 16px;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+}
+
+.about-club-paragraph {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 100;
+    color: #e6e6e6;
+}
+
+.header-content {
+    margin: 0 auto;
+    padding-left: var(--padding-page);
+    background-color: #000;
+    margin-bottom: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /*min-height: 50vh;*/
+    height: 90vh;
+    max-height: 100vh;
+    align-items: center;
+}
+
+
+h1 {
+    text-align: start;
+}
+h2{
+    font-size: 3rem;
+    font-family: 'Roboto-Condensed';
+    font-weight: 800;
+}
+p{
+    font-size: 1.25rem;
+    font-family: 'Montserrat';
+}
+
+.cta-button-about-club-sign-up{
+    margin-top: 1rem;
+    display: inline-block;
+    text-align: center;
+}
+
+.about-club-hero-photo-container{
+    display: contents;
+}
+.about-club-hero-text-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+    justify-content: center;
+    gap: 1rem;
+    /*box-shadow: 30px 0 29px 4px rgba(0, 0, 0, 0.42);*/
+    z-index: 2;
+}
+.about-club-hero-text-container::after {
+    content: '';
+    position: absolute;
+    /* inset: -10px; */
+    left: 200px;
+    width: 100%;
+    height: 150%;
+    z-index: -1;
+    background: linear-gradient(90deg, #000000, #000000);
+    filter: blur(80px);
+    border-radius: inherit;
+}
+
+
+
+.header-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+    .header-content {
+        padding: 1.25rem;
+        display: block;
+        height: 40vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../src/img/about-club/hero-about-club-photo.jpg") no-repeat center;
+        background-size: cover;
+    }
+    .about-club-hero-text-container {
+        align-items: center;
+    }
+    .about-club-hero-photo-container{
+        display: none;
+    }
+    .about-club-hero-text-container::after {
+        content: none;
+    }
+    .about-club-hero-text-container h1 br{
+        display: none;
+    }
+    .cta-button-about-club-sign-up{
+        width: auto;
+    }
+
+}
+
+
+
+
+/* --------------- Чем мы занимаемся секция ------------------------ */
+
+
+.what-we-do-section {
+    background-color: #121212;
+    padding: 5rem var(--padding-page);
+}
+
+.what-we-do-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 10rem;
+}
+
+.what-we-do-content div {
+    justify-content: center;
+}
+
+
+.what-we-do-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+    flex: 0 0 40%;
+}
+
+.what-we-do-photos::before {
+    content: '';
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: 100%;
+    height: 100%;
+    background: #b900006b;
+    filter: blur(3.5rem);
+    pointer-events: none;
+    z-index: 1;
+    padding: 1rem;
+}
+
+.what-we-do-photos-row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    z-index: 2;
+
+}
+
+.what-we-do-photos-row img {
+    border-radius: .7rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+}
+
+.what-we-do-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+
+}
+
+.what-we-do-text h2 {
+    font-size: 3rem;
+    font-family: 'Roboto-Condensed';
+    font-weight: 900;
+}
+.what-we-do-mobile-image{
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .what-we-do-section {
+        padding: 5rem 1.5rem;
+    }
+    .what-we-do-text {
+        align-items: center;
+    }
+    .what-we-do-content {
+        flex-direction: column-reverse;
+    }
+    .what-we-do-photos::before {
+        content: none;
+    }
+    .what-we-do-mobile-image{
+        display: block;
+    }
+    .what-we-do-mobile-image img{
+        border-radius: 1.5rem;
+    }
+    .what-we-do-photos {
+        display: none;
+    }
+}
+
+
+
+
+/* ------------------------ ТАИР начало ------------------------- */
+
+.tair-beginning-section {
+    background-color: #121212;
+    padding: 5rem var(--padding-page);
+}
+
+.tair-beginning-content {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.tair-beginning-photo-and-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+.tair-beginning-photo-and-text>div img {
+    border-radius: 1rem;
+    width: 100%;
+}
+
+/*.tair-beginning-photo-and-text :nth-child(2) {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    gap: 3rem;*/
+/*    align-items: flex-start;*/
+/*    flex: 0 0 60%;*/
+/*}*/
+
+
+.tair-beginning-photo-and-text h2 {
+    font-size: 3rem;
+    font-family: 'Roboto-Condensed';
+    font-weight: 100;
+}
+.tair-beginning-photo-and-text p {
+    max-width: 50vw;
+}
+
+
+.tair-beginning-three-photos {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    gap: 1rem;
+}
+.tair-beginning-three-photos img{
+    border-radius: 0.9rem;
+    width: 100%;
+}
+.tair-beginning-two-photos{
+    display: none;
+}
+#tair-beginning-h2-mobile{
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .tair-beginning-three-photos {
+        display: none;
+    }
+    .tair-beginning-section {
+        background-color: #121212;
+        padding: 5rem 1.5rem;
+    }
+    .tair-beginning-photo-and-text {
+        flex-direction: column;
+    }
+    .tair-beginning-three-photos-mobile{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .tair-beginning-two-photos {
+        display: grid;
+    }
+    .tair-beginning-two-photos img {
+        height: 90%;
+    }
+    .tair-beginning-photo-and-text>div img {
+        width: 90%;
+    }
+    #tair-beginning-h2-desktop{
+        display: none;
+    }
+    #tair-beginning-h2-mobile{
+        display: block;
+    }
+    .tair-beginning-photo-and-text p {
+        max-width: 100%;
+    }
+}
+
+
+/* ------------------- ТАИР сегодня ---------------------- */
+
+.tair-today-section{
+    background-color: #121212;
+    padding: 5rem var(--padding-page);
+}
+
+.tair-today-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.tair-today-text-container{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.tair-today-text-container h2{
+    font-size: 3rem;
+    font-family: 'Roboto-Condensed';
+    font-weight: 800;
+    text-align: center;
+}
+.tair-today-text-container p{
+    text-align: center;
+    max-width: 70vw;
+}
+
+.tair-today-photos-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    max-width: 100vw;
+    overflow: hidden;
+}
+.tair-today-photos-container img{
+    /* flex: 0 0 20%; */
+    border-radius: .7rem;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@media (max-width: 480px) {
+    .tair-today-section{
+        padding: 5rem 1.5rem;
+    }
+    .tair-today-content {
+        gap: 2rem;
+    }
+    .tair-today-text-container{
+        gap: 1rem;
+    }
+    .tair-today-text-container h2{
+        font-weight: 900;
+        text-align: start;
+    }
+    .tair-today-text-container p {
+        text-align: start;
+        max-width: 100%;
+    }
+}
+
+
+
+
+
+/* -------------------------- Секция что вас ждёт -------------------------*/
+
+.what-awaits-you{
+    background-color: #121212;
+    padding: 5rem 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+}
+.what-awaits-you-photos{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+}
+.what-awaits-you-photos img{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+.what-awaits-you-header{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+.what-awaits-you-header img{
+    width: 100%;
+}
+.cta-button-what-awaits-you{
+    text-align: center;
+    padding: .8rem 2rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+}
+
+
+
+
+
+@media (max-width: 480px) {
+    .what-awaits-you {
+        display: block;
+    }
+    .what-awaits-you{
+        padding: 5rem 1rem;
+    }
+    .what-awaits-you-photos {
+        display: none;
+    }
+    .cta-button-about-club-sign-up {
+        width: auto;
+    }
+    .what-awaits-you-header {
+        gap: 1rem;
+    }
+    .cta-button-what-awaits-you{
+        display: block;
+    }
+}
+
+
+
+
+
+
+

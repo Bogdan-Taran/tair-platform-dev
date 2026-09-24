@@ -1,0 +1,291 @@
+.schedule-section{
+    padding: 6rem var(--padding-page) 1rem;
+    background: #000;
+}
+
+.schedule-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 32px;
+    color: #ffffff;
+}
+
+.schedule-block-title{
+    font-size: 1.5rem;
+    font-family: 'Oswald';
+}
+
+/* ----------------- блок расписания ----------------- */
+.schedule-block {
+    background: #5C0106;
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+}
+
+.schedule-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.schedule-location {
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+}
+
+.schedule-categories {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cat {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ===== ОБЁРТКА ТАБЛИЦЫ (скролл на мобильных) ===== */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+}
+
+/* ===== ТАБЛИЦА ===== */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+.schedule-table--wide {
+    min-width: 700px;
+}
+
+.schedule-table thead th {
+    background-color: rgba(0, 0, 0, 0.35);
+    padding: 14px 12px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.schedule-table thead th:first-child {
+    text-align: left;
+    min-width: 180px;
+}
+
+.schedule-table tbody td {
+    padding: 14px 12px;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    vertical-align: middle;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.schedule-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.schedule-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.row-label {
+    text-align: left !important;
+    font-weight: 600;
+    font-size: 0.88rem;
+    line-height: 1.4;
+    color: #ffffff;
+    white-space: normal;
+    min-width: 160px;
+}
+
+.address-label {
+    text-transform: uppercase;
+    font-size: 0.82rem;
+    letter-spacing: 0.3px;
+    opacity: 0.9;
+}
+
+.group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 8px;
+}
+
+.group:last-child {
+    margin-bottom: 0;
+}
+
+.group-name {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 500;
+}
+
+.group-time {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* ===== ПУСТАЯ ЯЧЕЙКА ===== */
+.schedule-table tbody td:empty::after {
+    content: '—';
+    color: rgba(255, 255, 255, 0.15);
+    font-size: 1.1rem;
+}
+
+/* ===== СКРОЛЛБАР ===== */
+.table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 3px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ===== АДАПТИВ: ПЛАНШЕТ ===== */
+@media (max-width: 768px) {
+    .schedule-title {
+        font-size: 1.7rem;
+        margin-bottom: 24px;
+    }
+
+    .schedule-block {
+        padding: 16px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    .schedule-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .schedule-location {
+        font-size: 1.05rem;
+    }
+
+    .cat {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    .schedule-table thead th {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+
+    .schedule-table thead th:first-child {
+        min-width: 140px;
+    }
+
+    .schedule-table tbody td {
+        padding: 10px 8px;
+        font-size: 0.82rem;
+    }
+
+    .row-label {
+        font-size: 0.8rem;
+        min-width: 130px;
+    }
+}
+
+/* ===== АДАПТИВ: МОБИЛЬНЫЙ ===== */
+@media (max-width: 480px) {
+
+    .schedule-section {
+        padding: 3rem 1.5rem;
+        background: #000;
+    }
+
+    .schedule-title {
+        font-size: 1.4rem;
+        margin-bottom: 18px;
+    }
+    .schedule-block-title {
+        font-size: 1rem;
+        font-family: 'Oswald';
+    }
+
+    .schedule-block {
+        padding: 12px 10px;
+        border-radius: 10px;
+        margin-bottom: 16px;
+    }
+
+    .schedule-location {
+        font-size: 0.95rem;
+    }
+
+    .cat {
+        padding: 5px 10px;
+        font-size: 0.72rem;
+        border-radius: 6px;
+    }
+
+    .schedule-table thead th {
+        padding: 8px 6px;
+        font-size: 0.78rem;
+    }
+
+    .schedule-table thead th:first-child {
+        min-width: 110px;
+    }
+
+    .schedule-table tbody td {
+        padding: 8px 6px;
+        font-size: 0.76rem;
+    }
+
+    .row-label {
+        font-size: 0.74rem;
+        min-width: 100px;
+    }
+
+    .group-name {
+        font-size: 0.65rem;
+    }
+
+    .group-time {
+        font-size: 0.82rem;
+    }
+}

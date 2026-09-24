@@ -1,0 +1,480 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background-color: #121212;
+}
+
+main {
+    padding: 0 var(--padding-page);
+}
+
+h1 {
+    font-family: 'Montserrat';
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 4.8rem;
+}
+
+
+h2 {
+    font-family: 'Montserrat';
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 3rem;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: #C9C9C9;
+}
+
+@media (max-width: 480px) {
+    main {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 3rem;
+    }
+
+    h2 {
+        font-family: 'Montserrat';
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.1rem;
+    }
+
+    p {
+        font-size: .9rem;
+        font-weight: 400;
+    }
+}
+
+
+/* --------------- header -----------------*/
+
+.header-summer-camp-2026 {
+    padding: 0 var(--padding-page);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../src/img/summer-camp-2026/summer-camp-2026-hero-photo.jpg') no-repeat center;
+    background-size: cover;
+    height: 90vh;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: 0px -250px 120px 50px rgba(0, 0, 0, 0.3) inset;
+    position: relative;
+}
+
+.header-summer-camp-2026 img {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    width: 10%;
+}
+
+.header-summer-camp-2026 p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    max-width: 40vw;
+}
+
+.header-summer-camp-2026 a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+.header-links-summer-camp-2026 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 5rem;
+}
+
+.header-links-summer-camp-2026 a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.header-links-summer-camp-2026 a:hover {
+    transform: scale(1.05);
+    transition: 0.2s ease-in-out;
+    font-weight: 600;
+    box-shadow: 0px 0px 50px 2px #9d040d4d;
+}
+
+
+.camp-with-tait-that {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 4.5rem;
+    filter: drop-shadow(0px 0px 20px #9D040D);
+}
+
+@media (max-width: 480px) {
+    .header-summer-camp-2026 {
+        padding: 0 1.5rem;
+    }
+
+    .header-summer-camp-2026 p {
+        max-width: 100%;
+        font-size: .9rem;
+        font-weight: 400;
+    }
+
+    .header-summer-camp-2026 a {
+        text-align: center;
+    }
+
+    .header-links-summer-camp-2026 {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        width: 100%;
+    }
+}
+
+/* ---------------------- Начало дня ------------------------*/
+
+.article-day-beginning {
+    padding-top: 6rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    gap: 5rem;
+}
+
+.article-day-beginning header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.day-beginning-photos {
+    display: flex;
+    gap: 1.2rem;
+    min-width: 0;
+}
+
+.day-beginning-photos > img, .day-beginning-two-photos {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.day-beginning-two-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.day-beginning-photos img, .day-beginning-two-photos img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-day-beginning header p {
+    max-width: 40vw;
+    color: #C9C9C9;
+}
+
+@media (max-width: 480px) {
+    .camp-with-tait-that {
+        font-size: 2rem;
+        font-weight: 800;
+    }
+
+    .article-day-beginning {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr 2fr;
+        justify-content: center;
+        gap: 2rem;
+    }
+
+    .article-day-beginning header {
+        gap: .9rem;
+    }
+
+    .article-day-beginning header p {
+        max-width: 100%;
+    }
+
+    .day-beginning-photos img, .day-beginning-two-photos img {
+        height: auto;
+    }
+}
+
+
+/* --------------------------- мероприятия в лагере ---------------------------*/
+.article-camp-events {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 5rem;
+}
+
+.camp-events-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 0;
+}
+
+.camp-events-two-photos, .camp-events-three-photos {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+    min-width: 0;
+}
+
+.camp-events-two-photos img, .camp-events-three-photos img {
+    display: block;
+    min-width: 0;
+    flex: 1 1 0;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.header-camp-events {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 20%;
+}
+
+@media (max-width: 480px) {
+    .header-camp-events {
+        gap: .9rem;
+        margin-top: 0;
+    }
+
+    .article-camp-events {
+        display: flex;
+        flex-direction: column-reverse;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        padding-top: 4rem;
+    }
+
+    .camp-events-photos {
+        gap: 1rem;
+    }
+
+    .camp-events-two-photos, .camp-events-three-photos {
+        gap: 1rem;
+    }
+
+    .camp-events-two-photos img, .camp-events-three-photos img {
+        height: auto;
+    }
+}
+
+
+/* -------------------------- вожатые --------------------*/
+
+.article-squad-leaders {
+    padding-top: 10rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10rem;
+    justify-content: center;
+}
+
+.header-squad-leaders {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    height: 100%;
+}
+
+.header-squad-leaders p {
+    max-width: 40vw;
+}
+
+.squad-leaders-photos {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+}
+
+.squad-leaders-photos img {
+    display: block;
+    min-width: 0;
+    flex: 1 1 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    .article-squad-leaders {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-top: 4rem;
+    }
+
+    .header-squad-leaders {
+        display: flex;
+        flex-direction: column;
+        gap: .9rem;
+    }
+
+    .header-squad-leaders p {
+        max-width: 100%;
+    }
+}
+
+
+/* ---------------------------- тренировки ---------------------------- */
+
+.article-everyday-trains {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.header-everyday-trains {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: start;
+}
+
+.everyday-trains-photos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.everyday-trains-six-photos {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex: 1 1 0;
+}
+
+.everyday-trains-four-photos {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex: 1 1 0;
+}
+
+.everyday-trains-six-photos img, .everyday-trains-four-photos img {
+    display: block;
+    min-width: 0;
+    flex: 1 1 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*border: white solid 0.7px;*/
+}
+
+@media (max-width: 480px) {
+    .article-everyday-trains{
+        padding-top: 4rem;
+    }
+    .header-everyday-trains {
+        gap: .9rem;
+    }
+
+    .everyday-trains-photos {
+        gap: .5rem;
+    }
+
+    .everyday-trains-six-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: .5rem;
+    }
+
+    .everyday-trains-four-photos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: .5rem;
+    }
+}
+
+
+/* --------------------------- отрядные соревнования ---------------------------- */
+
+.article-squad-competitions {
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.hero-squad-competitions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+.header-squad-competitions{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.squad-competitions-photos{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 0;
+    gap: 1.5rem;
+}
+.squad-competitions-photos img{
+    display: block;
+    min-width: 0;
+    flex: 1 1 0;
+    width: auto;
+    height: 80%;
+    object-fit: cover;
+}
+
+@media (max-width: 480px) {
+    .article-squad-competitions{
+        gap: .5rem;
+        padding-top: 4rem;
+    }
+    .hero-squad-competitions {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 1rem;
+    }
+    .header-squad-competitions {
+        gap: .9rem;
+    }
+    .squad-competitions-photos{
+        gap: .5rem;
+    }
+}
