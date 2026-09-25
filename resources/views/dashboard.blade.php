@@ -5,13 +5,18 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
+    <button class="btn-black">К договору</button>
+    <a href="{{ route('add-child') }}">Добавить ребёнка</a>
+
+    <div class="container signed-contracts-container">
+        @foreach($children as $child)
+        <article class="contract-item">
+            <p>АКАДЕМГОРОДОК</p>
+            <h3>Ченкова Эльвира Ф.</h3>
+            <h4>{{ $child->child_firstname }}</h4>
+            <p>{{$child->child_birthdate}}</p>
+            <a>89528883535</a>
+        </article>
+        @endforeach
     </div>
 </x-app-layout>
