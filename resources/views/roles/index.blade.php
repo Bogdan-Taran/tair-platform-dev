@@ -6,7 +6,7 @@
     </x-slot>
 
     <button class="btn-black">К договору</button>
-    <a href="{{ route('add-child') }}">Добавить роль</a>
+    <a href="{{ route('roles.create')}}">Добавить роль</a>
 
     <div class="container signed-contracts-container">
         @foreach($roles as $role)
