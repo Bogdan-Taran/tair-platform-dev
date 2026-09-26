@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Child;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -10,8 +11,9 @@ class AccountController extends Controller
 
     public function index(){
         $children = Child::all();
+        $users = User::all();
 
-        return view('dashboard', compact('children'));
+        return view('dashboard', compact('children', 'users'));
     }
     public function addChild(Request $request){
         return view('add-child');

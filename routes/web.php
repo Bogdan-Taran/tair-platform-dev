@@ -17,7 +17,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('add-child', [\App\Http\Controllers\AccountController::class, 'addChild'])->name('add-child');
     Route::post('store-child', [\App\Http\Controllers\AccountController::class, 'storeChild'])->name('store-child');
+    Route::resource('roles', \App\Http\Controllers\RoleController::class);
 });
+
 
 
 require __DIR__.'/auth.php';
