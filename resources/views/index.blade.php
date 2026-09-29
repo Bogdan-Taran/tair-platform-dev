@@ -1,26 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТАИР - Спортивный клуб</title>
-    <script src="{{ url('frontend/js/import-footer-header.js')}}" defer></script>
-
-    <link rel="stylesheet" href="{{ url('frontend/css/styles.css')}}">
-    <link rel="stylesheet" href="{{ url('frontend/css/modal/style-contact-us.css')}}">
-
-    <!--  стили reviews -->
-    <link rel="stylesheet" href="{{ url('frontend/css/style-reviews.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick-theme.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/style-schedule.css')}}"/>
-</head>
 
 <body>
-
-
-<div id="header-container"></div>
 
 
 <section class="hero">

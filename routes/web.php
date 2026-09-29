@@ -4,8 +4,25 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::get('/about-club', function () {
+    return view('about-club');
+});
+Route::get('/our-team', function () {
+    return view('our-team');
+});
+Route::get('/halls-adventure', function () {
+    return view('halls-adventure');
+});
+Route::get('/summer-camp-2026', function () {
+    return view('summer-camp-2026');
+});
+Route::get('/summer-camp-beret', function () {
+    return view('summer-camp-beret');
+});
+
+
 
 
 Route::middleware('auth')->group(function () {
@@ -15,8 +32,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/dashboard', [\App\Http\Controllers\AccountController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-    Route::get('add-child', [\App\Http\Controllers\AccountController::class, 'addChild'])->name('add-child');
-    Route::post('store-child', [\App\Http\Controllers\AccountController::class, 'storeChild'])->name('store-child');
+    Route::get('add-child', [\App\Http\Controllers\AccountController::class, 'addChild'])->name('add-child')->middleware('can:add child');
+    Route::post('store-child', [\App\Http\Controllers\AccountController::class, 'storeChild'])->name('store-child')->middleware('can:store child');
     Route::resource('roles', \App\Http\Controllers\RoleController::class);
 });
 

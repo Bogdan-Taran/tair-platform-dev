@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТАИР - Тренерский состав</title>
+    <script src="../js/import-footer-header.js" defer></script>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/style-coaching-staff.css">
+    <link rel="stylesheet" href="../css/style-coaching-staff.css">
+</head>
+
+<body>
+
+<div id="header-container"></div>
+<main id="main-container">
+
+    <h1>Тренерский состав</h1>
+
+    <section>
+        <article class="container section-trainer-yaroslav">
+            <div class="trainer-content">
+                <div class="trainer-image-container trainer-yaroslav-image-container">
+                    <img src="../src/img/coaching-staff/yaroslav-coach.png" alt="Тренер Ярослав Таран">
+                </div>
+
+                <div class="trainer-text-container">
+                    <h2>Ярослав Таран</h2>
+                    <p>Я пришел в спорт с самого детства. Сначала занимался простым бегом, пробовал себя и в
+                        волейболе,
+                        и в плаванье, и в футболе, а в 10 лет пришел в единоборства. Сначала занимался карате, затем
+                        постепенно перешел в контактные единоборства - рукопашный бой и армейский рукопашный бой</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="container section-trainer-quote">
+            <blockquote class="trainer-quote trainer-quote-yaroslav">
+                <p>“Я не могу сделать их чемпионами, но могу помочь им прийти к этому, раскрыть их возможности и
+                    осуществить мечты.”</p>
+                <cite>-Ярослав Таран</cite>
+            </blockquote>
+        </article>
+
+
+        <article class="container section-trainer-irina">
+            <div class="trainer-content">
+                <div class="trainer-text-container trainer-text-container-irina">
+                    <h2>Ирина Некрасова</h2>
+                    <p>Я просто знала, что если это можно сделать, то это нужно сделать, и я это сделала. Кто-то
+                        хочет, чтобы это произошло, кто-то желает, чтобы это произошло, а кто-то делает это
+                        возможным</p>
+                </div>
+                <div class="trainer-image-container trainer-irina-image-container">
+                    <img src="../src/img/coaching-staff/irina-coach.png" alt="Тренер Ирина Некрасова">
+                </div>
+            </div>
+        </article>
+
+        <article class="container section-trainer-quote">
+            <blockquote class="trainer-quote trainer-quote-irina">
+                <p>“Ты поймёшь когда начнёшь”</p>
+                <cite>-Ирина Некрасова</cite>
+            </blockquote>
+        </article>
+
+        <!-- Елена Васильевна -->
+        <article class="container section-trainer-yaroslav section-trainer-elena">
+            <div class="trainer-content">
+                <div class="trainer-image-container trainer-yaroslav-image-container trainer-elena-image-container">
+                    <img src="../src/img/coaching-staff/elena_kovaleva.png" alt="Тренер Елена Ковалёва">
+                </div>
+
+                <div class="trainer-text-container">
+                    <h2>Елена Ковалёва</h2>
+                    <p>С молодости занимаюсь физической культурой, постоянно повышаю свою квалификацию. На одном из
+                        обучений мне встретилась Ирина Валерьевна и с того момента моя история пошла по новому
+                        вектору</p>
+                </div>
+            </div>
+        </article>
+
+        <article class="container section-trainer-quote">
+            <blockquote class="trainer-quote  trainer-quote-elena">
+                <p>"В здоровом теле здоровый дух"</p>
+                <cite>-Елена Ковалёва</cite>
+            </blockquote>
+        </article>
+    </section>
+
+
+    <!--    Секция тренеры-инструкторы-->
+    <hr class="horizontal-instructors ">
+
+    <section class="section-trainers-instructors container">
+        <header>
+            <div class="trainers-instructors-left">
+                <img src="../src/img/coaching-staff/trainers-instructors-maksim-savely.jpg"
+                     alt="Тренеры-инструкторы Савелий и Максим вдвоём">
+            </div>
+            <div class="trainers-instructors-right">
+                <h2>Тренеры-инструкторы</h2>
+                <p>Мы воспитываем всех бойцов в равных условиях, но некоторые из них начинают себя активно проявлять. Мы
+                    это видим и даём возможность развития в сфере</p>
+                <div class="trainers-instructors-bottom-img">
+                    <img src="../src/img/coaching-staff/trainers-instructors-maksim-savely-yaroslav.jpg"
+                         alt="Тренеры-инструкторы Савелий и Максим на соревнованиях с Ярославом">
+                </div>
+            </div>
+        </header>
+
+        <article class="article-trainers-instructors article-trainers-instructors-maksim">
+            <header class="header-text-trainers-instructors header-text-trainers-instructors-maxim">
+                <div class="image-trainer-instructor">
+                <img src="../src/img/coaching-staff/maxim-trainer-instructor.png" alt="Фото тренера-инструктора Максима" class="image-trainer">
+                </div>
+                <div class="trainers-instructors-info">
+                    <h3>Максим Кашников</h3>
+                    <p>С ранних лет я увлекался спортом и успел попробовать себя в самых разных направлениях: от лыжных
+                        гонок и силовых тренировок до тайского бокса.
+                        Это позволило мне сформировать отличную разностороннюю базу.
+                        Поворотным моментом в моей спортивной карьере стало первое занятие
+                        в клубе "Таир" — этот вид спорта увлек меня с самого начала.
+                        Благодаря высокой самоотдаче, дисциплине и активному участию в жизни клуба,
+                        со временем мне доверили проведение занятий. На сегодняшний день я являюсь действующим
+                        инструктором одного из филиалов, где полноценно веду тренировки и помогаю подопечным делать
+                        первые уверенные шаги в этом спорте</p>
+                </div>
+            </header>
+            <blockquote class="trainer-quote trainer-quote-maxim">
+                <p>Неважно, откуда ты пришел и какой у тебя бэкграунд.
+                    Важно, готов ли ты выкладываться прямо сейчас</p>
+                <cite>-Максим Кашников</cite>
+            </blockquote>
+        </article>
+
+<!--        <article class="article-trainers-instructors article-trainers-instructors-savely">-->
+<!--            <header class="header-text-trainers-instructors header-text-trainers-instructors-savely">-->
+<!--                <div class="trainers-instructors-info trainers-instructors-info-savely">-->
+<!--                    <h3>Савелий Бусыгин</h3>-->
+<!--                    <p>Любил заниматься спортом, ходил в качалку. Узнал про клуб смешанных единоборств Таир и решил-->
+<!--                        сходить. Честно сказать, я влюбился в этот спорт.-->
+<!--                        Стал активно заниматься и проявлять себя, тренер это увидел и начал ставить понемногу вести-->
+<!--                        тренировки.</p>-->
+<!--                </div>-->
+<!--                <div class="image-trainer-instructor">-->
+<!--                <img src="../src/img/coaching-staff/savely-trainer-instructor.png" alt="Фото тренера-инструктора Савелия" class="image-trainer">-->
+<!--                </div>-->
+
+<!--            </header>-->
+<!--            <blockquote class="trainer-quote trainer-quote-savely">-->
+<!--                <p>"Выйду в поле ночью с конём"</p>-->
+<!--                <cite>-Савелий Бусыгин</cite>-->
+<!--            </blockquote>-->
+<!--        </article>-->
+    </section>
+
+
+</main>
+<div id="footer-container"></div>
+</body>
+</html>

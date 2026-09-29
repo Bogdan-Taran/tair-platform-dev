@@ -31,13 +31,13 @@ document.querySelectorAll('.faq-question').forEach(question => {
 
 //переходы по страницам
 function goToPageSummerCampBeret() {
-    window.location.href = "pages/summer-camp-beret.html";
+    window.location.href = "pages/summer-camp-beret.blade.php";
 }
 function goToPageAboutClub(){
-    window.location.href = "pages/about-club.html";
+    window.location.href = "pages/about-club.blade.php";
 }
 function goToPageHallsAdventure(){
-    window.location.href = "pages/halls-adventure.html";
+    window.location.href = "pages/halls-adventure.blade.php";
 }
 function scrollToTop() {
     window.scrollTo({
