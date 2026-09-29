@@ -10,7 +10,7 @@
             <div class="hero-content">
                 <!-- <img src="src/assets/hero_photo.png" alt="Фото главной страницы"> -->
                 <p class="hero-subtitle">СПОРТИВНЫЙ КЛУБ</p>
-                <button class="button-base cta-button js-open-modal">ЗАПИСАТЬСЯ</button>
+                <button class="button-base cta-button js-open-modal" onclick="window.location.href='{{ route('index') }}#contacts'">ЗАПИСАТЬСЯ</button>
             </div>
         </section>
 
@@ -33,7 +33,7 @@
                 </div>
             </div>
             <div class="about-club-button ">
-                <button class="button-base cta-button cta-about-club-button" onclick="goToPageAboutClub()">Узнать больше
+                <button class="button-base cta-button cta-about-club-button" onclick="window.location.href='{{ route('about-club') }}'">Узнать больше
                 </button>
             </div>
         </section>
@@ -208,7 +208,7 @@
                              class="gloves-icon-black">
                     </article>
                     <button class="button-base cta-button cta-view-the-halls-button"
-                            onclick="goToPageHallsAdventure()">
+                            onclick="window.location.href='{{ route('our-branches') }}'">
                         Посмотреть залы
                     </button>
                 </div>
@@ -563,7 +563,7 @@
                 </div>
 
                 <div class="container-cta-button-summer-camp">
-                    <button class="button-base cta-button-summer-camp" onclick="goToPageSummerCampBeret()">Больше о
+                    <button class="button-base cta-button-summer-camp" onclick="window.location.href='{{ route('summer-camp-2026') }}'">Больше о
                         лагере
                     </button>
                 </div>

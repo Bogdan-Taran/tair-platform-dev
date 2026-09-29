@@ -114,8 +114,8 @@
             <ul>
                 <li><a href="{{ route('our-team') }}">КОМАНДА</a></li>
                 <li><a href="{{ route('our-branches') }}">ФИЛИАЛЫ</a></li>
-                <li><a href="/index.html#contacts">КОНТАКТЫ</a></li>
-                <li><a href="../pages/about-club.html">О КЛУБЕ</a></li>
+                <li><a href="{{ route('index') }}#contacts">КОНТАКТЫ</a></li>
+                <li><a href="{{ route('about-club') }}">О КЛУБЕ</a></li>
             </ul>
         </nav>
         <button class="menu-toggle" aria-label="Открыть меню">

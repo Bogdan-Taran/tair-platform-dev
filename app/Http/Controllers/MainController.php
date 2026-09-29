@@ -15,4 +15,10 @@ class MainController extends Controller
     public function ourBranches(){
         return view('our-branches');
     }
+    public function aboutClub(){
+        return view('about-club');
+    }
+    public function summerCamp2026(){
+        return view('summer-camp-2026');
+    }
 }

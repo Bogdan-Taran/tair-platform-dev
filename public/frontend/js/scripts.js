@@ -33,9 +33,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
 function goToPageSummerCampBeret() {
     window.location.href = "pages/summer-camp-beret.blade.php";
 }
-function goToPageAboutClub(){
-    window.location.href = "pages/about-club.blade.php";
-}
+
 function goToPageHallsAdventure(){
     window.location.href = "pages/our-branches.blade.php";
 }

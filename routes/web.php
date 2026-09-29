@@ -7,15 +7,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/our-team', [MainController::class, 'ourTeam'])->name('our-team');
 Route::get('/our-branches', [MainController::class, 'ourBranches'])->name('our-branches');
+Route::get('/about-club', [MainController::class, 'aboutClub'])->name('about-club');
+Route::get('/summer-camp-2026', [MainController::class, 'summerCamp2026'])->name('summer-camp-2026');
 
 
-Route::get('/about-club', function () {
-    return view('about-club');
-});
-
-Route::get('/summer-camp-2026', function () {
-    return view('summer-camp-2026');
-});
 Route::get('/summer-camp-beret', function () {
     return view('summer-camp-beret');
 });
