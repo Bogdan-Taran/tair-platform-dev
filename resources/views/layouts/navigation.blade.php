@@ -106,13 +106,13 @@
 <header class="main-header">
     <div class="container header-container">
         <div class="logo" onclick="goToIndex()" >
-            <img src="../src/assets/tair_logo.png" alt="Логотип ТАИР">
+            <img src="{{ url('frontend/src/assets/tair_logo.png') }}" alt="Логотип ТАИР">
             <span class="logo-text">ТАИР</span>
         </div>
 
         <nav class="main-nav">
             <ul>
-                <li><a href="../pages/сoaching-staff.html">ТРЕНЕРА</a></li>
+                <li><a href="{{ route('our-team') }}">КОМАНДА</a></li>
                 <li><a href="../pages/halls-adventure.html">ФИЛИАЛЫ</a></li>
                 <li><a href="/index.html#contacts">КОНТАКТЫ</a></li>
                 <li><a href="../pages/about-club.html">О КЛУБЕ</a></li>

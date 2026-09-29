@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -5,7 +7,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ТАИР - Тренерский состав</title>
-    <script src="../js/import-footer-header.js" defer></script>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/style-coaching-staff.css">
     <link rel="stylesheet" href="../css/style-coaching-staff.css">
@@ -13,7 +14,6 @@
 
 <body>
 
-<div id="header-container"></div>
 <main id="main-container">
 
     <h1>Тренерский состав</h1>

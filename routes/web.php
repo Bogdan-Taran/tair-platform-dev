@@ -1,16 +1,16 @@
 <?php
 
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [MainController::class, 'index'])->name('index');
+
+Route::get('/our-team', [MainController::class, 'ourTeam'])->name('our-team');
+
+
 Route::get('/about-club', function () {
     return view('about-club');
-});
-Route::get('/our-team', function () {
-    return view('our-team');
 });
 Route::get('/halls-adventure', function () {
     return view('halls-adventure');
