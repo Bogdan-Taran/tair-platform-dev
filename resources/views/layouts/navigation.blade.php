@@ -113,7 +113,7 @@
         <nav class="main-nav">
             <ul>
                 <li><a href="{{ route('our-team') }}">КОМАНДА</a></li>
-                <li><a href="../pages/halls-adventure.html">ФИЛИАЛЫ</a></li>
+                <li><a href="{{ route('our-branches') }}">ФИЛИАЛЫ</a></li>
                 <li><a href="/index.html#contacts">КОНТАКТЫ</a></li>
                 <li><a href="../pages/about-club.html">О КЛУБЕ</a></li>
             </ul>

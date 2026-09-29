@@ -13,6 +13,6 @@ class MainController extends Controller
         return view('our-team');
     }
     public function ourBranches(){
-        return view('');
+        return view('our-branches');
     }
 }
