@@ -105,7 +105,7 @@
 
 <header class="main-header">
     <div class="container header-container">
-        <div class="logo" onclick="goToIndex()" >
+        <div class="logo" onclick="window.location.href='{{ route('index') }}'" >
             <img src="{{ url('frontend/src/assets/tair_logo.png') }}" alt="Логотип ТАИР">
             <span class="logo-text">ТАИР</span>
         </div>

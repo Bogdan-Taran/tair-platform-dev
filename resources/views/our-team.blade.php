@@ -1,28 +1,19 @@
 @extends('layouts.app')
 
-<!DOCTYPE html>
-<html lang="ru">
+@section('title')
+    Наша команда
+@endsection
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТАИР - Тренерский состав</title>
-    <link rel="stylesheet" href="/css/styles.css">
-    <link rel="stylesheet" href="/css/style-coaching-staff.css">
-    <link rel="stylesheet" href="../css/style-coaching-staff.css">
-</head>
-
-<body>
-
+@section('main-content')
 <main id="main-container">
 
-    <h1>Тренерский состав</h1>
+    <h1>Наша команда</h1>
 
     <section>
         <article class="container section-trainer-yaroslav">
             <div class="trainer-content">
                 <div class="trainer-image-container trainer-yaroslav-image-container">
-                    <img src="../src/img/coaching-staff/yaroslav-coach.png" alt="Тренер Ярослав Таран">
+                    <img src="{{ url('frontend/src/img/coaching-staff/yaroslav-coach.png')}}" alt="Тренер Ярослав Таран">
                 </div>
 
                 <div class="trainer-text-container">
@@ -53,7 +44,7 @@
                         возможным</p>
                 </div>
                 <div class="trainer-image-container trainer-irina-image-container">
-                    <img src="../src/img/coaching-staff/irina-coach.png" alt="Тренер Ирина Некрасова">
+                    <img src="{{ url('frontend/src/img/coaching-staff/irina-coach.png')}}" alt="Тренер Ирина Некрасова">
                 </div>
             </div>
         </article>
@@ -69,7 +60,7 @@
         <article class="container section-trainer-yaroslav section-trainer-elena">
             <div class="trainer-content">
                 <div class="trainer-image-container trainer-yaroslav-image-container trainer-elena-image-container">
-                    <img src="../src/img/coaching-staff/elena_kovaleva.png" alt="Тренер Елена Ковалёва">
+                    <img src="{{ url('frontend/src/img/coaching-staff/elena_kovaleva.png')}}" alt="Тренер Елена Ковалёва">
                 </div>
 
                 <div class="trainer-text-container">
@@ -96,7 +87,7 @@
     <section class="section-trainers-instructors container">
         <header>
             <div class="trainers-instructors-left">
-                <img src="../src/img/coaching-staff/trainers-instructors-maksim-savely.jpg"
+                <img src="{{ url('frontend/src/img/coaching-staff/trainers-instructors-maksim-savely.jpg')}}"
                      alt="Тренеры-инструкторы Савелий и Максим вдвоём">
             </div>
             <div class="trainers-instructors-right">
@@ -104,7 +95,7 @@
                 <p>Мы воспитываем всех бойцов в равных условиях, но некоторые из них начинают себя активно проявлять. Мы
                     это видим и даём возможность развития в сфере</p>
                 <div class="trainers-instructors-bottom-img">
-                    <img src="../src/img/coaching-staff/trainers-instructors-maksim-savely-yaroslav.jpg"
+                    <img src="{{ url('frontend/src/img/coaching-staff/trainers-instructors-maksim-savely-yaroslav.jpg')}}"
                          alt="Тренеры-инструкторы Савелий и Максим на соревнованиях с Ярославом">
                 </div>
             </div>
@@ -113,7 +104,7 @@
         <article class="article-trainers-instructors article-trainers-instructors-maksim">
             <header class="header-text-trainers-instructors header-text-trainers-instructors-maxim">
                 <div class="image-trainer-instructor">
-                <img src="../src/img/coaching-staff/maxim-trainer-instructor.png" alt="Фото тренера-инструктора Максима" class="image-trainer">
+                <img src="{{ url('frontend/src/img/coaching-staff/maxim-trainer-instructor.png')}}" alt="Фото тренера-инструктора Максима" class="image-trainer">
                 </div>
                 <div class="trainers-instructors-info">
                     <h3>Максим Кашников</h3>
@@ -135,29 +126,12 @@
             </blockquote>
         </article>
 
-<!--        <article class="article-trainers-instructors article-trainers-instructors-savely">-->
-<!--            <header class="header-text-trainers-instructors header-text-trainers-instructors-savely">-->
-<!--                <div class="trainers-instructors-info trainers-instructors-info-savely">-->
-<!--                    <h3>Савелий Бусыгин</h3>-->
-<!--                    <p>Любил заниматься спортом, ходил в качалку. Узнал про клуб смешанных единоборств Таир и решил-->
-<!--                        сходить. Честно сказать, я влюбился в этот спорт.-->
-<!--                        Стал активно заниматься и проявлять себя, тренер это увидел и начал ставить понемногу вести-->
-<!--                        тренировки.</p>-->
-<!--                </div>-->
-<!--                <div class="image-trainer-instructor">-->
-<!--                <img src="../src/img/coaching-staff/savely-trainer-instructor.png" alt="Фото тренера-инструктора Савелия" class="image-trainer">-->
-<!--                </div>-->
-
-<!--            </header>-->
-<!--            <blockquote class="trainer-quote trainer-quote-savely">-->
-<!--                <p>"Выйду в поле ночью с конём"</p>-->
-<!--                <cite>-Савелий Бусыгин</cite>-->
-<!--            </blockquote>-->
-<!--        </article>-->
     </section>
 
 
 </main>
-<div id="footer-container"></div>
-</body>
-</html>
+@endsection
+
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('frontend/css/style-coaching-staff.css')}}">
+@endpush

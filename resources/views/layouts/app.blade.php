@@ -15,16 +15,11 @@
     <link rel="stylesheet" href="{{ url('frontend/css/styles.css')}}">
     <link rel="stylesheet" href="{{ url('frontend/css/modal/style-contact-us.css')}}">
 
-    <!--  стили reviews -->
-    <link rel="stylesheet" href="{{ url('frontend/css/style-reviews.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick-theme.css')}}"/>
-    <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/style-schedule.css')}}"/>
 
     @stack('styles')
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{--    @vite(['resources/css/app.css', 'resources/js/app.js'])--}}
 </head>
 
 <body class="">
@@ -33,7 +28,7 @@
 @yield('main-content')
 
 
-@include('footer')
+@include('layouts.footer')
 
 <script src="{{ url('frontend/js/scripts.js')}}" defer></script>
 

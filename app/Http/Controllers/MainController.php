@@ -12,4 +12,7 @@ class MainController extends Controller
     public function ourTeam(){
         return view('our-team');
     }
+    public function ourBranches(){
+        return view('');
+    }
 }

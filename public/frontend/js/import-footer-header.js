@@ -34,9 +34,6 @@ fetch('../pages/header.html')
 
 
 
-function goToIndex() {
-    window.location.href = "../index.html";
-}
 
 fetch('../pages/footer.html')
     .then(response => response.text())

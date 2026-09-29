@@ -5,16 +5,14 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index'])->name('index');
-
 Route::get('/our-team', [MainController::class, 'ourTeam'])->name('our-team');
+Route::get('/our-branches', [MainController::class, 'ourTeam'])->name('our-team');
 
 
 Route::get('/about-club', function () {
     return view('about-club');
 });
-Route::get('/halls-adventure', function () {
-    return view('halls-adventure');
-});
+
 Route::get('/summer-camp-2026', function () {
     return view('summer-camp-2026');
 });

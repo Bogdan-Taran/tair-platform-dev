@@ -778,6 +778,14 @@
     </main>
 
 
+    @push('styles')
+        <!--  стили reviews -->
+        <link rel="stylesheet" href="{{ url('frontend/css/style-reviews.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick-theme.css')}}"/>
+        <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/style-schedule.css')}}"/>
+    @endpush
+
     @push('scripts')
         <script src="{{ url('frontend/js/open-modal.js')}}"></script>
 
