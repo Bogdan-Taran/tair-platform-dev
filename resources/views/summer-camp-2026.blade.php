@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ТАИР - Летний лагерь 2026</title>
-    <script src="../js/import-footer-header.js" defer></script>
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/style-summer-camp-2026.css">
-</head>
-<body>
-<div id="header-container"></div>
+@extends('layouts.app')
+
+@section('title')
+    Летний лагерь 2026
+@endsection
+
+@section('main-content')
+
+
 <header class="header-summer-camp-2026">
     <h1>ЛЕТНИЙ<br>ЛАГЕРЬ<br>2026</h1>
     <p>Каждый год наша команда делает летние сборы в спортивно-оздоровительном лагере. Там мы проводим огромное
@@ -22,7 +19,7 @@
         </svg>
         <a href="#">Хочу в лагерь</a>
     </div>
-    <img src="../src/img/summer-camp-2026/tair-logo.png" alt="Эмблема ТАИР">
+    <img src="{{ url('frontend/src/img/summer-camp-2026/tair-logo.png')}}" alt="Эмблема ТАИР">
 </header>
 <main>
 
@@ -137,7 +134,16 @@
 
 </main>
 
-<div id="footer-container"></div>
+@endsection
+
+
+
+@push('styles')
+    <link rel="stylesheet" href="{{ url('frontend/css/style-summer-camp-2026.css')}}">
+@endpush
+
+@push('scripts')
+
 
 <script defer>
     function scrollDownFromHero() {
@@ -149,8 +155,7 @@
             duration: 800,
         });
     }
-
 </script>
 
-</body>
-</html>
+@endpush
+
