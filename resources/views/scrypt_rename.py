@@ -1,8 +1,8 @@
 import re
 
 # Имя вашего исходного файла и имя файла, куда сохранить результат
-INPUT_FILE = "summer-camp-2026.blade.php"
-OUTPUT_FILE = "summer-camp-2026_processed.blade.php"
+INPUT_FILE = "reviews.blade.php"
+OUTPUT_FILE = "reviews_processed.blade.php"
 
 # Регулярное выражение для поиска тегов img с относительным путем
 # Оно захватывает всё, что идет после '../' внутри атрибута src

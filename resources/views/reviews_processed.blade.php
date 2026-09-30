@@ -1,0 +1,31 @@
+<section class="reviews" id="reviews">
+    <article class="container container-reviews">
+        <h2 class="section-title">Отзывы</h2>
+        <div class="reviews-content">
+            <div>
+                <button type="button" class="nav-btn prev-btn">
+                    <img src="{{ url('frontend/src/assets/left-btn.png')}}" alt="Предыдущий отзыв" width="40" height="40">
+                </button>
+            </div>
+
+            <div class="reviews-slider">
+                <div class="review-card"> <img src="{{ url('frontend/src/img/reviews/image_1.jpg')}}" alt="Отзыв 1"></div>,
+                <div class="review-card"> <img src="{{ url('frontend/src/img/reviews/image_10.jpg')}}" alt="Отзыв 2"></div>,
+                <div class="review-card"> <img src="{{ url('frontend/src/img/reviews/image_11.jpg')}}" alt="Отзыв 3"></div>,
+                <div class="review-card"> <img src="{{ url('frontend/src/img/reviews/image_12.jpg')}}" alt="Отзыв 4"></div>,
+                <div class="review-card"> <img src="{{ url('frontend/src/img/reviews/image_13.jpg')}}" alt="Отзыв 5"></div>,
+                <div class="review-card"> <img src="{{ url('frontend/src/img/reviews/image_14.jpg')}}" alt="Отзыв 6"></div>,
+                <div class="review-card"> <img src="{{ url('frontend/src/img/reviews/image_15.jpg')}}" alt="Отзыв 7"></div>,
+                <div class="review-card"> <img src="{{ url('frontend/src/img/reviews/image_16.jpg')}}" alt="Отзыв 8"></div>,
+            </div>
+
+            <div>
+                <button type="button" class="nav-btn next-btn">
+                    <img src="{{ url('frontend/src/assets/right-btn.png')}}" alt="Следующий отзыв" width="40" height="40">
+                </button>
+            </div>
+        </div>
+    </article>
+</section>
+
+

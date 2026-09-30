@@ -574,6 +574,8 @@
         @include('reviews')
 
 
+
+
         <!-- --------------- Часто задаваемые восросы ------------------  -->
         <section class="faq-section" id="faq-section">
             <div class="container faq-container">
@@ -784,6 +786,11 @@
         <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{ url('frontend/slick/slick-theme.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{ url('frontend/css/style-schedule.css')}}"/>
+
+        <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+
+
     @endpush
 
     @push('scripts')
@@ -793,8 +800,58 @@
         <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script type="text/javascript" src="{{ url('frontend/slick/slick.min.js')}}"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-        <script src="{{ url('frontend/js/import-reviews.js')}}" defer></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.reviews-slider').slick({
+                    prevArrow: '.prev-btn',
+                    nextArrow: '.next-btn',
+                    dots: false,
+                    // infinite: true,
+                    // speed: 300,
+                    slidesToShow: 3,
+                    // lazyLoad: 'ondemand',
+                    slidesToScroll: 1,
+                    // autoplay: true,
+                    // autoplaySpeed: 1000,
+                    responsive: [
+                        {
+                            breakpoint: 1024,
+                            settings: {
+                                slidesToShow: 3,
+                                slidesToScroll: 1,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                slidesToShow: 2,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                        // You can unslick at a given breakpoint now by adding:
+                        // settings: "unslick"
+                        // instead of a settings object
+                    ],
+
+                });
+            });
+
+        </script>
+
+
+
     @endpush
 
 

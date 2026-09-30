@@ -2,27 +2,27 @@
     <div class="footer-content">
         <div class="footer-lists">
             <h3>Главная</h3>
-            <a href="../index.html#about-club">О клубе</a>
-            <a href="../index.html#directions">Наши направления</a>
-            <a href="../index.html#branch-container">Наши филиалы</a>
-            <a href="../index.html#competitions">Соревнования в которых мы участвовали</a>
-            <a href="../index.html#why-us">Почему выбирают нас</a>
-            <a href="../index.html#summer-camp">Летний лагерь и сдача на берет</a>
-            <a href="../index.html#reviews">Отзывы</a>
-            <a href="../index.html#faq-section">Часто задаваемые вопросы</a>
-            <a href="../index.html#contacts">Контакты</a>
-            <a href="../index.html#see-more-section">Смотреть больше</a>
+            <a href="{{ route('index') }}#about-club">О клубе</a>
+            <a href="{{ route('index') }}#directions">Наши направления</a>
+            <a href="{{ route('index') }}#branch-container">Наши филиалы</a>
+            <a href="{{ route('index') }}#competitions">Соревнования в которых мы участвовали</a>
+            <a href="{{ route('index') }}#why-us">Почему выбирают нас</a>
+            <a href="{{ route('index') }}#summer-camp">Летний лагерь и сдача на берет</a>
+            <a href="{{ route('index') }}#reviews">Отзывы</a>
+            <a href="{{ route('index') }}#faq-section">Часто задаваемые вопросы</a>
+            <a href="{{ route('index') }}#contacts">Контакты</a>
+            <a href="{{ route('index') }}#see-more-section">Смотреть больше</a>
         </div>
 
         <hr class="vertical">
 
         <div class="footer-lists">
             <h3>Наш клуб</h3>
-            <a href="../pages/about-club.html">О клубе ТАИР</a>
-            <a href="../pages/сoaching-staff.html">Тренерский состав</a>
-            <a href="../index.html#contacts">Контакты</a>
-            <a href="../index.html#contacts-map">Как к нам добраться</a>
-            <a href="../index.html#contacts">Записаться на тренировку</a>
+            <a href="{{ route('about-club') }}">О клубе ТАИР</a>
+            <a href="{{ route('our-team') }}">Тренерский состав</a>
+            <a href="{{ route('index') }}#contacts">Контакты</a>
+            <a href="{{ route('index') }}#contacts-map">Как к нам добраться</a>
+            <a href="{{ route('index') }}#contacts">Записаться на тренировку</a>
         </div>
 
         <hr class="vertical">
