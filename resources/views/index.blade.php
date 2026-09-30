@@ -804,6 +804,9 @@
 
 
         <script>
+
+
+
             $(document).ready(function(){
                 $('.reviews-slider').slick({
                     prevArrow: '.prev-btn',

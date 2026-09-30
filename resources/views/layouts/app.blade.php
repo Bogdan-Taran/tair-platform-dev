@@ -32,6 +32,42 @@
 
 <script src="{{ url('frontend/js/scripts.js')}}" defer></script>
 
+<script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 1. Находим элементы на странице
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        // 2. Проверяем, что элементы существуют (чтобы не было ошибок на других страницах)
+        if (menuToggle && mainNav) {
+
+            // Клик по кнопке-бургеру (открыть/закрыть)
+            menuToggle.addEventListener('click', function () {
+                menuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+            });
+
+            // Клик по любой ссылке в меню (закрыть меню при переходе)
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    menuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                });
+            });
+
+            // Клик в любом месте экрана вне меню (закрыть меню)
+            document.addEventListener('click', function (event) {
+                if (!mainNav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    menuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                }
+            });
+        }
+    });
+
+</script>
+
 @stack('scripts')
 
 

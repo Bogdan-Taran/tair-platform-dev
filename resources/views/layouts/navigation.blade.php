@@ -112,10 +112,11 @@
 
         <nav class="main-nav">
             <ul>
-                <li><a href="{{ route('our-team') }}">КОМАНДА</a></li>
+                <li><a href="{{ route('our-team') }}">НАША КОМАНДА</a></li>
                 <li><a href="{{ route('our-branches') }}">ФИЛИАЛЫ</a></li>
                 <li><a href="{{ route('index') }}#contacts">КОНТАКТЫ</a></li>
                 <li><a href="{{ route('about-club') }}">О КЛУБЕ</a></li>
+                <li><a href="{{ route('about-club') }}"><img class="profile-icon" src="{{ url('frontend/src/assets/icons/profile-icon.svg')}}" alt="иконка профиля"></a></li>
             </ul>
         </nav>
         <button class="menu-toggle" aria-label="Открыть меню">
