@@ -1,9 +1,9 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
+
+@section('main-content')
+
+
+
 
     <header class="container">
         <h2>Пока у вас нет подписанных договоров об оказании платных услуг</h2>
@@ -26,4 +26,5 @@
             </article>
         @endforeach
     </div>
-</x-app-layout>
+
+@endsection

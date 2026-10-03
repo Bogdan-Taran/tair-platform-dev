@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class AccountController extends Controller
 {
 
-    public function index(){
+    public function dashboard(){
         $children = Child::all();
         $users = User::all();
 

@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    Route::get('/dashboard', [\App\Http\Controllers\AccountController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/dashboard', [\App\Http\Controllers\AccountController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
 
     Route::get('add-child', [\App\Http\Controllers\AccountController::class, 'addChild'])->name('add-child')->middleware('can:add child');
     Route::post('store-child', [\App\Http\Controllers\AccountController::class, 'storeChild'])->name('store-child')->middleware('can:store child');

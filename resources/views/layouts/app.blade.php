@@ -12,6 +12,7 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="{{ asset('frontend/css/style-contracts-main.css') }}">
 
+    <link rel="stylesheet" href="{{ url('frontend/css/auth-modals.css')}}">
     <link rel="stylesheet" href="{{ url('frontend/css/styles.css')}}">
     <link rel="stylesheet" href="{{ url('frontend/css/modal/style-contact-us.css')}}">
 
@@ -24,6 +25,8 @@
 
 <body class="">
 @include('layouts.navigation')
+@include('components.register-modal')
+@include('components.login-modal')
 
 @yield('main-content')
 
@@ -31,6 +34,7 @@
 @include('layouts.footer')
 
 <script src="{{ url('frontend/js/scripts.js')}}" defer></script>
+<script src="{{ url('frontend/js/auth-modal.js')}}" defer></script>
 
 <script defer>
     document.addEventListener('DOMContentLoaded', function () {
@@ -67,6 +71,8 @@
     });
 
 </script>
+
+
 
 @stack('scripts')
 

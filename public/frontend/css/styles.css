@@ -312,6 +312,10 @@ body {
 .profile-icon {
     display: block;
     height: 2.5rem;
+    cursor: pointer;
+}
+.profile-icon:hover {
+    transform: scale(1.05);
 }
 
 
