@@ -1,5 +1,5 @@
 <div class="modal-backdrop" id="registerModal" style="display: none">
-    <div class="modal-content" style="padding: 0; ">
+    <div class="modal-content modal-register">
         <button class="close-button" type="button" id="closeModalButton" onclick="closeModal()">
             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <line x1="1" y1="19.5858" x2="19.5858" y2="1" stroke="white" stroke-width="2" stroke-linecap="round"/>
@@ -55,6 +55,10 @@
                 <div class="form-group">
                     <input type="password" id="reg_password_confirmation" name="password_confirmation" required
                            placeholder="Подтверждение пароля">
+                </div>
+                <div class="form-group checkbox-agree-pda">
+                    <input type="checkbox" id="reg_checkbox" name="agree_pda" required>
+                    <label for="reg_checkbox">Соглашаюсь на обработку персонаьлных данных</label>
                 </div>
                 <button type="submit" class="btn-submit">Зарегистрироваться</button>
             </form>
