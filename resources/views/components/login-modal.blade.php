@@ -20,17 +20,16 @@
             <h2>Платформа ТАИР</h2>
             <div class="modal-output-errors" id="modalErrors"></div>
 
-            <div class="modal-output-errors" id="modalErrors"></div>
-
             <form id="loginForm" action="{{ route('login') }}" method="POST" class="login-form">
                 @csrf
 
                 <div class="form-group">
-                    <input type="text" id="reg_email" name="email" required placeholder="Email почта">
+                    <input type="text" id="email" name="email" required placeholder="Email почта">
                     <span class="field-error" id="error_email"></span>
+                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
                 <div class="form-group">
-                    <input type="password" id="reg_password" name="password" required placeholder="Пароль">
+                    <input type="password" id="password" name="password" required placeholder="Пароль">
                     <span class="field-error" id="error_password"></span>
                 </div>
                 <a href="{{ route('password.request') }}">Забыли пароль?</a>
