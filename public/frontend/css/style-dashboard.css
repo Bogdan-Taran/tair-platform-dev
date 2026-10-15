@@ -1,0 +1,84 @@
+.sidenav{
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 80px;
+}
+
+.sidenav a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    font-size: 1.6rem;
+    padding: 1rem 1.3rem;
+}
+
+.sidenav a:hover {
+    color: #8f8f8f;
+}
+
+main{
+    margin-left: 200px;
+    padding: 2rem;
+    background: #690208;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.profile-info-block, .children-info, .my-branch-info, .schedule-block{
+    background-color: #000;
+    border-radius: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.profile-info-block{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+
+.profile-photo{
+    width: 150px;
+    height: 150px;
+}
+.profile-photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.fio{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.profile-info-details{
+    display: flex;
+    flex-direction: column;
+}
+.property-info-block{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    font-size: 1rem;
+    position: relative;
+}
+.edit-icon{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+.property-text{
+    color: #C9C9C9;
+}
+.info-text{
+    color: #fff;
+}
+
+
