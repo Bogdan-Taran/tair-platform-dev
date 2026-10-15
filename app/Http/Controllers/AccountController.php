@@ -12,8 +12,9 @@ class AccountController extends Controller
     public function dashboard(){
         $children = Child::all();
         $users = User::all();
+        $current_user = auth()->user();
 
-        return view('dashboard', compact('children', 'users'));
+        return view('dashboard', compact('children', 'users', 'current_user'));
     }
     public function addChild(Request $request){
         return view('add-child');

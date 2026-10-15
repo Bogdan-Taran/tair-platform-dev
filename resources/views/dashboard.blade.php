@@ -18,22 +18,22 @@
                         <div class="profile-photo"><img src="{{ url('frontend/src/img/about-club-image.png')}}"
                                                         alt="Боец ТАИР в клетке на ММА"></div>
                         <div class="profile-info-details">
-                            <h3 class="block-header">Ченкова Эльвира Фёдоровна</h3>
+                            <h3 class="block-header">{{ $current_user->firstname }} {{ $current_user->lastname }} {{ $current_user->patronymic }} </h3>
                             <div class="property-info-block">
                                 <p class="property-text">Дата регистрации</p>
-                                <p class="info-text">17 сентрября 2026г</p>
+                                <p class="info-text">{{$current_user->created_at->format('d.m.Y')}}</p>
                             </div>
                             <div class="property-info-block">
                                 <p class="property-text">Дата рождения</p>
-                                <p class="info-text">24 ноября 1989г</p>
+                                <p class="info-text">{{$current_user->birthdate}}г</p>
                             </div>
                             <div class="property-info-block">
                                 <p class="property-text">E-mail</p>
-                                <p class="info-text">examplemail@mail.ru</p>
+                                <p class="info-text">{{$current_user->email}}</p>
                             </div>
                             <div class="property-info-block">
                                 <p class="property-text">Телефон</p>
-                                <p class="info-text">88005553535</p>
+                                <p class="info-text">{{$current_user->phone}}</p>
                             </div>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                                 <p class="info-text">10 марта 2010г.</p>
                             </div>
                         </div>
-                        <a class="add-child-btn">Добавить ребёнка</a>
+                        <a class="add-child-btn" href="{{ route('add-child') }}">Добавить ребёнка</a>
 
                     </div>
                 </div>

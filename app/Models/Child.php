@@ -9,11 +9,11 @@ class Child extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'child_firstname',
-        'child_lastname',
-        'child_patronymic',
-        'child_gender',
-        'child_birthdate',
-        'child_branch_id',
+        'firstname',
+        'lastname',
+        'patronymic',
+        'gender',
+        'birthdate',
+        'branch_id',
     ];
 }

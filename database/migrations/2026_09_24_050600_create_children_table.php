@@ -13,12 +13,14 @@ return new class extends Migration
     {
         Schema::create('children', function (Blueprint $table) {
             $table->id();
-            $table->string('child_firstname');
-            $table->string('child_lastname');
-            $table->string('child_patronymic');
-            $table->string('child_gender');
-            $table->date('child_birthdate');
-            $table->integer('child_branch_id');
+
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('patronymic');
+            $table->string('gender');
+            $table->date('birthdate');
+            $table->integer('branch_id');
             $table->timestamps();
         });
     }
