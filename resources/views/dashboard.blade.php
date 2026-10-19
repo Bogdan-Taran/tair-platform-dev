@@ -13,7 +13,7 @@
             <div class="three-blocks">
                 <div class="profile-blocks-info">
                     <div class="profile-info-block">
-                        <img src="{{ url('frontend/src/assets/edit-icon.svg')}}" alt="Изменить иконка"
+                        <img src="{{ url('frontend/src/assets/icons/edit-icon.svg')}}" alt="Изменить иконка"
                              class="edit-icon">
                         <div class="profile-photo"><img src="{{ url('frontend/src/img/about-club-image.png')}}"
                                                         alt="Боец ТАИР в клетке на ММА"></div>
@@ -57,23 +57,23 @@
                 <div class="my-branch-info">
                     <h3 class="block-header">Мой филиал</h3>
                     <div class="branch-info-section">
-                        <div class="flex-col gap-4">
+                        <div class="branch-info-box">
                             <div class="property-info-block">
-                                <img src="{{ url('frontend/src/assets/edit-icon.svg')}}" alt="Изменить иконка"
-                                     class="edit-icon">
-                                <p>Академгородок, Пр. Академический, 17</p>
+                                <img src="{{ url('frontend/src/assets/point-icon.png')}}" alt="Иконка локации"
+                                     class="property-icons">
+                                <p>Пр. Академический, 17</p>
                             </div>
                             <div class="property-info-block">
-                                <img src="{{ url('frontend/src/assets/edit-icon.svg')}}" alt="Изменить иконка"
-                                     class="edit-icon">
+                                <img src="{{ url('frontend/src/assets/coach-icon.png')}}" alt="Иконка тренера"
+                                     class="property-icons">
                                 <div class="flex-col">
                                     <p>Ярослав Таран</p>
                                     <p>Максим Кашников</p>
                                 </div>
                             </div>
                             <div class="branch-phone">
-                                <img src="{{ url('frontend/src/assets/edit-icon.svg')}}" alt="Изменить иконка"
-                                     class="edit-icon">
+                                <img src="{{ url('frontend/src/assets/phone-icon.png')}}" alt="Иконка телефона"
+                                     class="property-icons">
                                 <p>8-952-889-45-15</p>
                             </div>
                         </div>

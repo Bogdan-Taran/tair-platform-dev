@@ -21,6 +21,14 @@ class AccountController extends Controller
 
         return view('dashboard', compact('current_user', 'user_children'));
     }
+    public function documents()
+    {
+        return view('documents');
+    }
+    public function signContract()
+    {
+        return view('sign-contract');
+    }
     public function addChild(Request $request){
         return view('add-child');
     }

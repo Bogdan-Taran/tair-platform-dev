@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/dashboard', [\App\Http\Controllers\AccountController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
+    Route::get('/documents', [\App\Http\Controllers\AccountController::class, 'documents'])->middleware(['auth', 'verified'])->name('documents');
+    Route::get('/sign-contract', [\App\Http\Controllers\AccountController::class, 'signContract'])->middleware(['auth', 'verified'])->name('sign-contract');
 
     Route::get('add-child', [\App\Http\Controllers\AccountController::class, 'addChild'])->name('add-child')->middleware('can:add child');
     Route::post('store-child', [\App\Http\Controllers\AccountController::class, 'storeChild'])->name('store-child')->middleware('can:store child');

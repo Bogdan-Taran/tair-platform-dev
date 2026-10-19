@@ -4,6 +4,8 @@ console.log(document.querySelectorAll('.faq-question').length);
 
 
 
+
+
 // FAQ секция
 document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', function (e) {

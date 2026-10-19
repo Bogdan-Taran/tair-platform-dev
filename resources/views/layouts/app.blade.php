@@ -32,8 +32,8 @@
 
 @auth
     <div class="sidenav">
-        <a href="{{ route('dashboard') }}">Профиль</a>
-        <a href="#">Документы</a>
+        <a href="{{ route('dashboard') }}" class="{{ Route::is('dashboard') ? 'active' : '' }}">Профиль</a>
+        <a href="{{ route('documents') }}" class="{{ Route::is('documents' or 'sign-contract') ? 'active' : '' }}">Документы</a>
     </div>
 @endauth
 

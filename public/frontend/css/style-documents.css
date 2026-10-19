@@ -1,0 +1,22 @@
+.button-to-sign-contract{
+    background: #000;
+    color: #fff;
+    display: block;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    border-radius: 1rem;
+    width: fit-content;
+    transition: transform 0.2s ease;
+}
+.button-to-sign-contract:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.main-documents{
+    padding: 4rem;
+}
