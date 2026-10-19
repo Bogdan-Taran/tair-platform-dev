@@ -16,6 +16,10 @@
     <link rel="stylesheet" href="{{ url('frontend/css/styles.css')}}">
     <link rel="stylesheet" href="{{ url('frontend/css/modal/style-contact-us.css')}}">
 
+    @auth
+        <link rel="stylesheet" href="{{ url('frontend/css/style-dashboard.css')}}">
+    @endauth
+
 
     @stack('styles')
 
@@ -25,6 +29,14 @@
 
 <body class="">
 @include('layouts.navigation')
+
+@auth
+    <div class="sidenav">
+        <a href="{{ route('dashboard') }}">Профиль</a>
+        <a href="#">Документы</a>
+    </div>
+@endauth
+
 @include('components.register-modal')
 @include('components.login-modal')
 
@@ -71,7 +83,6 @@
     });
 
 </script>
-
 
 
 @stack('scripts')

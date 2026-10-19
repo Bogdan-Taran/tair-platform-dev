@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('firstname');
             $table->string('lastname');
             $table->string('patronymic');
-            $table->string('gender');
             $table->date('birthdate');
             $table->integer('branch_id');
             $table->timestamps();

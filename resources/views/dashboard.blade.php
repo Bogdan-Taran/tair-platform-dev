@@ -2,10 +2,10 @@
 
 @section('main-content')
 
-    <div class="sidenav">
-        <a href="#">Профиль</a>
-        <a href="#">Документы</a>
-    </div>
+{{--    <div class="sidenav">--}}
+{{--        <a href="#">Профиль</a>--}}
+{{--        <a href="#">Документы</a>--}}
+{{--    </div>--}}
 
     <main class="main">
 
@@ -21,11 +21,11 @@
                             <h3 class="block-header">{{ $current_user->firstname }} {{ $current_user->lastname }} {{ $current_user->patronymic }} </h3>
                             <div class="property-info-block">
                                 <p class="property-text">Дата регистрации</p>
-                                <p class="info-text">{{$current_user->created_at->format('d.m.Y')}}</p>
+                                <p class="info-text">{{ \Carbon\Carbon::parse($current_user->created_at)->format('d.m.Y')}}</p>
                             </div>
                             <div class="property-info-block">
                                 <p class="property-text">Дата рождения</p>
-                                <p class="info-text">{{$current_user->birthdate}}г</p>
+                                <p class="info-text">{{ \Carbon\Carbon::parse($current_user->birthdate)->format('d.m.Y') }}</p>
                             </div>
                             <div class="property-info-block">
                                 <p class="property-text">E-mail</p>
@@ -39,13 +39,17 @@
                     </div>
                     <div class="children-info">
                         <h3 class="block-header">Дети</h3>
+                        @forelse($user_children as $child)
                         <div class="child-item">
-                            <h4 class="child-fio">Рамазидов Илья Тимурович</h4>
+                            <h4 class="child-fio">{{ $child->firstname }} {{ $child->lastname }} {{ $child->patronymic }}</h4>
                             <div class="property-info-block">
                                 <p class="property-text">Дата рождения</p>
-                                <p class="info-text">10 марта 2010г.</p>
+                                <p class="info-text">{{ \Carbon\Carbon::parse($child->birthdate)->format('d.m.Y') }}г.</p>
                             </div>
                         </div>
+                        @empty
+                        <p>Вы еще не добавили ни одного ребенка.</p>
+                        @endforelse
                         <a class="add-child-btn" href="{{ route('add-child') }}">Добавить ребёнка</a>
 
                     </div>
@@ -107,5 +111,5 @@
 
 
 @push('styles')
-    <link rel="stylesheet" href="{{ url('frontend/css/style-dashboard.css')}}">
+
 @endpush

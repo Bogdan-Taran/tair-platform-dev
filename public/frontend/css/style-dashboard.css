@@ -114,12 +114,20 @@ main{
 .child-fio{
     font-size: 1.2rem;
 }
-.add-child-btn{
+.add-child-btn {
     background-color: #000;
     border: solid 1px #fff;
     border-radius: 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: lighter;
+    width: fit-content;
+    padding: .6rem 1rem;
+    transition: transform 0.3s ease;
 }
-
+.add-child-btn:hover{
+    transform: scale(1.05);
+}
 
 
 .branch-info-section{

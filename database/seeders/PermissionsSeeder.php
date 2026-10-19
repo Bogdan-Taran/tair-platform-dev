@@ -24,12 +24,14 @@ class PermissionsSeeder extends Seeder
         Permission::create(['name' => 'delete child']);
         Permission::create(['name' => 'sign contract']);
         Permission::create(['name' => 'show my contract']);
+        Permission::create(['name' => 'show my children']);
+        Permission::create(['name' => 'show all children']);
 
 
         $userRole = Role::create(['name' => 'user']);
         $adminRole = Role::create(['name' => 'admin']);
 
-        $userRole->givePermissionTo(['add child', 'edit child', 'store child', 'delete child', 'sign contract', 'show my contract']);
+        $userRole->givePermissionTo(['add child', 'edit child', 'store child', 'delete child', 'sign contract', 'show my contract', 'show my children']);
         $adminRole->givePermissionTo(Permission::all());
     }
 }
