@@ -20,3 +20,7 @@
 .main-documents{
     padding: 4rem;
 }
+
+.empty-documents-block p{
+    font-weight: 200;
+}

@@ -27,6 +27,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/documents', [\App\Http\Controllers\AccountController::class, 'documents'])->middleware(['auth', 'verified'])->name('documents');
     Route::get('/sign-contract', [\App\Http\Controllers\AccountController::class, 'signContract'])->middleware(['auth', 'verified'])->name('sign-contract');
 
+    Route::get('/passport', [\App\Http\Controllers\PassportController::class, 'edit'])->middleware(['auth', 'verified'])->name('passport.edit');
+    Route::post('/passport', [\App\Http\Controllers\PassportController::class, 'update'])->middleware(['auth', 'verified'])->name('passport.update');
+
     Route::get('add-child', [\App\Http\Controllers\AccountController::class, 'addChild'])->name('add-child')->middleware('can:add child');
     Route::post('store-child', [\App\Http\Controllers\AccountController::class, 'storeChild'])->name('store-child')->middleware('can:store child');
     Route::resource('roles', \App\Http\Controllers\RoleController::class);

@@ -34,4 +34,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Child::class);
     }
+    public function passportDetail(){
+        return $this->hasOne(PassportDetail::class);
+    }
 }
