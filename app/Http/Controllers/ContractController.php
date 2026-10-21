@@ -9,8 +9,8 @@ class ContractController extends Controller
 {
     public function signContract(Request $request){
         $validated = request()->validate([
-            'series' => 'required|string|max:4|min:4|regex:/^[0-9]{4}$/',
-            'number' => 'required|string|max:6|min:6|regex:/^[0-9]{6}$/',
+            'series' => 'required|numeric',
+            'number' => 'required|numeric',
             'issue_date' => 'required|date|before:today',
             'issue_by' => 'required|string|max:500|min:10',
             'address' => 'required|string|max:500|min:10',

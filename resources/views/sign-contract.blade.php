@@ -40,9 +40,8 @@
             Реквизиты сторон
         </h3>
 
-        <form action="">
+        <form action="{{route('sign-contract')}}" method="post">
             @csrf
-
             <div class="contract-sides-block">
                 <div class="side-block">
                     <p>Российская Федерация КСЕ «ТАИР» г.Томск<br>
@@ -54,33 +53,51 @@
 
                 <div class="side-block">
                     <h4>Паспорт:</h4>
+                    @if ($errors->any())
+                        <div class="alert alert-danger" style="color: #610006; font-size: 14px;" >
+                            Пожалуйста, проверьте правильность заполнения паспорта.
+                        </div>
+                    @endif
+                    @foreach($errors->all() as $error)
+                        <div class="alert alert-danger" style="color: #610006; font-size: 14px;" >
+                            {{ $error }}
+                        </div>
+                    @endforeach
                     <div class="form-row inline-row">
                         <div class="input-group">
                             <label for="series">Серия:</label>
                             <input type="text" id="series" name="series" maxlength="4"
-                                   value="{{ old('series', $passport->series ?? '') }}" required autocomplete="off">
+                                   value="{{ old('series', $passport->series ?? '') }}"  autocomplete="off">
                         </div>
                         <div class="input-group">
                             <label for="number">Номер:</label>
                             <input type="text" id="number" name="number" maxlength="6"
-                                   value="{{ old('number', $passport->number ?? '') }}" required autocomplete="off">
+                                   value="{{ old('number', $passport->number ?? '') }}"  autocomplete="off">
                         </div>
                     </div>
+                    @error('series') <span class="alert alert-danger" style="color: #610006; font-size: 14px;">{{ $message }}</span> @enderror
+                    @error('number') <span class="alert alert-danger" style="color: #610006; font-size: 14px;">{{ $message }}</span> @enderror
+
                     <div class="form-row full-width-row">
                         <label for="issue_by">Кем выдан:</label>
                         <input type="text" id="issue_by" name="issue_by"
-                               value="{{ old('issue_by', $passport->issue_by ?? '') }}" required>
+                               value="{{ old('issue_by', $passport->issue_by ?? '') }}" >
                     </div>
+                    @error('issue_by') <span class="alert alert-danger" style="color: #610006; font-size: 14px;">{{ $message }}</span> @enderror
+
                     <div class="form-row full-width-row">
                         <label for="issue_date">Когда выдан:</label>
                         <input type="date" id="issue_date" name="issue_date"
-                               value="{{ old('issue_date', $passport->issue_date ?? '') }}" required>
+                               value="{{ old('issue_date', $passport->issue_date ?? '') }}" >
                     </div>
+                    @error('issue_date') <span class="alert alert-danger" style="color: #610006; font-size: 14px;">{{ $message }}</span> @enderror
                     <div class="form-row full-width-row">
                         <label for="address">Адрес:</label>
                         <input type="text" id="address" name="address"
-                               value="{{ old('address', $passport->address ?? '') }}" required>
+                               value="{{ old('address', $passport->address ?? '') }}" >
                     </div>
+                    @error('address') <span class="alert alert-danger" style="color: #610006; font-size: 14px;">{{ $message }}</span> @enderror
+
                 </div>
             </div>
 
@@ -98,7 +115,6 @@
                 <a href="{{ route('dashboard') }}" class="btn-cancel">Отмена</a>
                 <button type="submit" id="acceptButton" class="btn-accept" disabled>Принять</button>
             </div>
-
         </form>
 
 

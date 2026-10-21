@@ -26,6 +26,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [\App\Http\Controllers\AccountController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
     Route::get('/documents', [\App\Http\Controllers\AccountController::class, 'documents'])->middleware(['auth', 'verified'])->name('documents');
     Route::get('/sign-contract', [\App\Http\Controllers\AccountController::class, 'signContract'])->middleware(['auth', 'verified'])->name('sign-contract');
+    Route::post('/sign-contract', [\App\Http\Controllers\ContractController::class, 'signContract'])->middleware(['auth', 'verified'])->name('sign-contract');
 
     Route::get('/passport', [\App\Http\Controllers\PassportController::class, 'edit'])->middleware(['auth', 'verified'])->name('passport.edit');
     Route::post('/passport', [\App\Http\Controllers\PassportController::class, 'update'])->middleware(['auth', 'verified'])->name('passport.update');
