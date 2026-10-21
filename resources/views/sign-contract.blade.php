@@ -40,29 +40,55 @@
             Реквизиты сторон
         </h3>
 
-        <div class="contract-sides-block">
-            <div class="side-block">
-                <p>Российская Федерация КСЕ «ТАИР» г.Томск<br>
-                    ИНН 701714476685<br>
-                    Бик 046902606 ПАО «Сбербанк» г.Томск,<br>
-                    Код подразделения банка 44/8616/00158<br>
-                    Лицевой счет 40817810064005000044</p>
-            </div>
-
-            <div class="side-block">
-
-            </div>
-        </div>
-
-
-        <form action="#" id="agreementForm">
+        <form action="">
             @csrf
+
+            <div class="contract-sides-block">
+                <div class="side-block">
+                    <p>Российская Федерация КСЕ «ТАИР» г.Томск<br>
+                        ИНН 701714476685<br>
+                        Бик 046902606 ПАО «Сбербанк» г.Томск,<br>
+                        Код подразделения банка 44/8616/00158<br>
+                        Лицевой счет 40817810064005000044</p>
+                </div>
+
+                <div class="side-block">
+                    <h4>Паспорт:</h4>
+                    <div class="form-row inline-row">
+                        <div class="input-group">
+                            <label for="series">Серия:</label>
+                            <input type="text" id="series" name="series" maxlength="4"
+                                   value="{{ old('series', $passport->series ?? '') }}" required autocomplete="off">
+                        </div>
+                        <div class="input-group">
+                            <label for="number">Номер:</label>
+                            <input type="text" id="number" name="number" maxlength="6"
+                                   value="{{ old('number', $passport->number ?? '') }}" required autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="form-row full-width-row">
+                        <label for="issue_by">Кем выдан:</label>
+                        <input type="text" id="issue_by" name="issue_by"
+                               value="{{ old('issue_by', $passport->issue_by ?? '') }}" required>
+                    </div>
+                    <div class="form-row full-width-row">
+                        <label for="issue_date">Когда выдан:</label>
+                        <input type="date" id="issue_date" name="issue_date"
+                               value="{{ old('issue_date', $passport->issue_date ?? '') }}" required>
+                    </div>
+                    <div class="form-row full-width-row">
+                        <label for="address">Адрес:</label>
+                        <input type="text" id="address" name="address"
+                               value="{{ old('address', $passport->address ?? '') }}" required>
+                    </div>
+                </div>
+            </div>
+
             <div class="agreement-block">
                 <label class="radio-label">
                     <input type="radio" name="agreement" value="accept" id="acceptRadio">
                     <span>Я принимаю условия договора и правила клуба</span>
                 </label>
-
                 <label class="radio-label">
                     <input type="radio" name="agreement" value="decline" id="declineRadio" checked>
                     <span>Я не принимаю условия договора</span>
@@ -70,9 +96,11 @@
             </div>
             <div class="form-buttons">
                 <a href="{{ route('dashboard') }}" class="btn-cancel">Отмена</a>
-                <button onclick="" id="nextButton" class="btn-next" disabled>Далее</button>
+                <button type="submit" id="acceptButton" class="btn-accept" disabled>Принять</button>
             </div>
+
         </form>
+
 
     </main>
 @endsection
@@ -87,13 +115,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             const acceptRadio = document.getElementById('acceptRadio');
             const declineRadio = document.getElementById('declineRadio');
-            const nextButton = document.getElementById('nextButton');
+            const acceptButton = document.getElementById('acceptButton');
 
             function toggleButton() {
                 if (acceptRadio.checked) {
-                    nextButton.removeAttribute('disabled');
+                    acceptButton.removeAttribute('disabled');
                 } else {
-                    nextButton.setAttribute('disabled', 'true');
+                    acceptButton.setAttribute('disabled', 'true');
                 }
             }
 
