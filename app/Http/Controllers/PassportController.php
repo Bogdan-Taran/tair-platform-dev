@@ -13,7 +13,7 @@ class PassportController extends Controller
     public function update(Request $request){
         $validated = $request->validate([
             'series' => 'required|string|max:4|min:4|regex:/^[0-9]{4}$/',
-            'number' => 'required|string|max:6|min:6|regex:/^[0-9]{4}$/',
+            'number' => 'required|string|max:6|min:6|regex:/^[0-9]{6}$/',
             'issue_date' => 'required|date',
             'issue_by' => 'required|string|max:500|min:10',
             'address' => 'required|string|max:500|min:10',

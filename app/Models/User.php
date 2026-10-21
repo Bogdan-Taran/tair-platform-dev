@@ -18,6 +18,10 @@ class User extends Authenticatable
     /** @use HasFactory<UserFactory> */
     use HasFactory, Notifiable, HasRoles;
 
+    protected $fillable = [
+        'address',
+    ];
+
     /**
      * Get the attributes that should be cast.
      *
@@ -36,5 +40,9 @@ class User extends Authenticatable
     }
     public function passportDetail(){
         return $this->hasOne(PassportDetail::class);
+    }
+    public function contracts()
+    {
+        return $this->hasMany(Contract::class);
     }
 }
