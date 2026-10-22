@@ -17,9 +17,6 @@ class AccountController extends Controller
             abort(403, 'У вас нет прав для просмотра списка детей');
         }
         $user_children = $current_user->children;
-//        $children = Child::all();
-//        $users = User::all();
-
         return view('dashboard', compact('current_user', 'user_children'));
     }
     public function documents()

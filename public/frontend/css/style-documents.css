@@ -24,3 +24,106 @@
 .empty-documents-block p{
     font-weight: 200;
 }
+
+
+.documents-container {
+    background-color: #610006;
+    color: #ffffff;
+    padding: 2rem;
+    min-height: 100vh;
+    font-family: 'Montserrat', 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+.documents-main-title {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+/* Обертка таблицы */
+.documents-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Таблица */
+.documents-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+/* Стили заголовков таблицы */
+.documents-table th {
+    color: #b37376; /* Приглушенный розово-серый цвет для подзаголовков */
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Тонкая полупрозрачная линия */
+}
+
+/* Стили ячеек с данными */
+.documents-table td {
+    padding: 20px 0;
+    font-size: 16px;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Линия между строками */
+}
+
+/* Распределение ширины колонок */
+.col-name { width: 60%; }
+.col-date { width: 35%; color: #e0e0e0; }
+.col-actions { width: 5%; text-align: right; }
+
+/* Блок названия документа и иконки */
+.document-title-block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Иконка документа */
+.document-icon {
+    width: 24px;
+    height: 24px;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.document-name {
+    letter-spacing: 0.3px;
+}
+
+/* Кнопка "Три точки" */
+.btn-more {
+    background: none;
+    border: none;
+    display: inline-flex;
+    gap: 4px;
+    cursor: pointer;
+    padding: 10px;
+    align-items: center;
+}
+
+.btn-more span {
+    width: 5px;
+    height: 5px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: block;
+    transition: background-color 0.2s;
+}
+
+.btn-more:hover span {
+    background-color: #b37376; /* Подсветка точек при наведении */
+}
+
+/* Сообщение, если документов нет */
+.no-documents {
+    text-align: center;
+    color: #b37376;
+    padding: 40px 0 !important;
+    font-style: italic;
+}
+

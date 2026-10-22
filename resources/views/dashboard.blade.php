@@ -2,11 +2,6 @@
 
 @section('main-content')
 
-{{--    <div class="sidenav">--}}
-{{--        <a href="#">Профиль</a>--}}
-{{--        <a href="#">Документы</a>--}}
-{{--    </div>--}}
-
     <main class="main">
 
         <div class="all-blocks">
@@ -110,6 +105,3 @@
 @endsection
 
 
-@push('styles')
-
-@endpush
