@@ -103,11 +103,11 @@
 
             <div class="agreement-block">
                 <label class="radio-label">
-                    <input type="radio" name="agreement" value="accept" id="acceptRadio">
+                    <input type="radio" name="agreement" value="1" id="acceptRadio">
                     <span>Я принимаю условия договора и правила клуба</span>
                 </label>
                 <label class="radio-label">
-                    <input type="radio" name="agreement" value="decline" id="declineRadio" checked>
+                    <input type="radio" name="agreement" value="0" id="declineRadio" checked>
                     <span>Я не принимаю условия договора</span>
                 </label>
             </div>
@@ -141,8 +141,8 @@
                 }
             }
 
-            acceptRadio.addEventListener('change', toggleButton);
-            declineRadio.addEventListener('change', toggleButton);
+            acceptRadio.addEventListener('click', toggleButton);
+            declineRadio.addEventListener('click', toggleButton);
         });
     </script>
 @endpush

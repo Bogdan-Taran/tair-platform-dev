@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ url('frontend/css/auth-modals.css')}}">
     <link rel="stylesheet" href="{{ url('frontend/css/styles.css')}}">
     <link rel="stylesheet" href="{{ url('frontend/css/modal/style-contact-us.css')}}">
+    <link rel="stylesheet" href="{{ url('frontend/css/modal/custom-alert.css')}}">
+
 
     @auth
         <link rel="stylesheet" href="{{ url('frontend/css/style-dashboard.css')}}">
@@ -28,6 +30,16 @@
 </head>
 
 <body class="">
+@if(session('status'))
+    <div id="customAlert" class="custom-alert-overlay">
+        <div class="custom-alert-box">
+            <h3>Уведомление</h3>
+            <p>{{ session('status') }}</p>
+            <button onclick="closeAlert()" class="custom-alert-btn">ОК</button>
+        </div>
+    </div>
+@endif
+
 @include('layouts.navigation')
 
 @auth
@@ -44,6 +56,8 @@
 
 
 @include('layouts.footer')
+
+
 
 <script src="{{ url('frontend/js/scripts.js')}}" defer></script>
 <script src="{{ url('frontend/js/auth-modal.js')}}" defer></script>
@@ -83,6 +97,9 @@
     });
 
 </script>
+
+
+
 
 
 @stack('scripts')

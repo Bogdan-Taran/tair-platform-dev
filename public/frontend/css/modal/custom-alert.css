@@ -1,0 +1,46 @@
+.custom-alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-family: "Montserrat", sans-serif;
+}
+
+.custom-alert-box {
+    background: #000000;
+    padding: 2rem;
+    border-radius: 3rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 30vw;
+    height: 30vh;
+    width: 90%;
+    animation: scaleUp 0.3s ease-in-out;
+    border: white 1px solid;
+}
+
+.custom-alert-btn {
+    background-color: #610006;
+    color: #fff;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+@keyframes scaleUp {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

@@ -1,6 +1,9 @@
 console.log('DOM ready?');
 console.log(document.querySelectorAll('.faq-question').length);
 
+function closeAlert() {
+    document.getElementById('customAlert').style.display = 'none';
+}
 
 
 

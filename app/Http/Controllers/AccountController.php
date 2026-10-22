@@ -6,6 +6,7 @@ use App\Models\Child;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use function Termwind\parse;
 
 class AccountController extends Controller
 {
@@ -23,12 +24,25 @@ class AccountController extends Controller
     }
     public function documents()
     {
-        return view('documents');
+        $user = auth()->user();
+        $user_contracts = $user->contracts;
+        return view('documents', compact('user', 'user_contracts'));
     }
     public function signContract()
     {
-        return view('sign-contract');
+        $user = auth()->user();
+
+        $latestContract = $user->contracts()->latest('sign_date')->first();
+        if($latestContract){
+            $expiration_date = \Carbon\Carbon::parse($latestContract->sign_date)->addYear();
+            if($expiration_date->greaterThan(now())) {
+                return redirect()->route('documents')->with('status', 'У вас уже есть действующий договор до ' . $expiration_date->format('d.m.Y'));
+            }
+        }
+        $passport = $user->passportDetail;
+        return view('sign-contract', compact('user', 'passport'));
     }
+
     public function addChild(Request $request){
         return view('add-child');
     }

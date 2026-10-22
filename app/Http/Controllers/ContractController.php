@@ -8,6 +8,16 @@ use Illuminate\Http\Request;
 class ContractController extends Controller
 {
     public function signContract(Request $request){
+
+        $user = auth()->user();
+        $latestContract = $user->contracts()->latest('sign_date')->first();
+        if ($latestContract) {
+            $expirationDate = \Carbon\Carbon::parse($latestContract->sign_date)->addYear();
+            if ($expirationDate->greaterThanOrEqualTo(now())) {
+                return redirect()->route('dashboard')->with('status', 'Действие текущего договора еще не истекло.');
+            }
+        }
+
         $validated = request()->validate([
             'series' => 'required|numeric',
             'number' => 'required|numeric',
@@ -20,7 +30,7 @@ class ContractController extends Controller
                 'series.regex' => 'Серия паспорта должна состоять из 4 цифр.',
                 'number.regex' => 'Номер паспорта должен состоять из 6 цифр.',
             ]);
-        $user = auth()->user();
+
 
         $user->passportDetail()->updateOrCreate(
             ['user_id' => $user->id],
