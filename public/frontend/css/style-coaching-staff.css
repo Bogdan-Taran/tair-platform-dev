@@ -483,13 +483,247 @@ grid-template-columns: 1fr 1fr;
     }
 }
 
+/* Общая подпись роли во всех персональных карточках команды. */
+.team-role {
+    display: inline-block;
+    align-self: flex-start;
+    width: fit-content;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-top: 12px;
+    padding: 6px 12px;
+    border: 1px solid currentColor;
+    border-radius: 999px;
+    color: #fff;
+    font-family: 'Montserrat';
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+}
 
+.trainers-instructors-info .team-role {
+    margin-top: 0;
+}
 
+.team-behind-scenes {
+    margin-top: 10rem;
+    padding-bottom: 5rem;
+}
 
+.team-behind-scenes-intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24rem;
+    box-sizing: border-box;
+    margin-bottom: 5rem;
+    padding: 4rem 1.5rem;
+    border-block: 1px solid #c1c1c1;
+    background: #000;
+    text-align: center;
+}
 
+.team-behind-scenes-intro p {
+    font-family: 'Montserrat';
+    font-size: clamp(16px, 1.4vw, 24px);
+    line-height: 1.4;
+}
 
+.team-support-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: 36% 64%;
+    min-height: 45vh;
+    background: #fff;
+}
 
+.team-support-portrait {
+    position: relative;
+    min-width: 0;
+}
 
+.team-support-portrait img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: auto;
+    height: 55vh;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: center bottom;
+    transform: translateX(-50%);
+    z-index: 2;
+}
 
+.team-support-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    padding: 3rem 12% 3rem 18%;
+    background: #9C1E1E;
+    clip-path: polygon(12% 0, 100% 0, 100% 100%, 0 100%);
+}
 
+.team-support-info h2 {
+    margin: 0 0 15px;
+    font-family: 'Roboto-Condensed';
+    font-size: 2rem;
+}
 
+.team-support-info p {
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+.team-support-card-reverse {
+    grid-template-columns: 54% 46%;
+}
+
+.team-support-card-reverse .team-support-portrait {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.team-support-card-reverse .team-support-info {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 3rem 22% 3rem 12%;
+    clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
+}
+
+.team-support-quote {
+    padding: 0 15%;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 900px) {
+    .trainer-text-container {
+        padding-right: 5%;
+        padding-left: 10%;
+    }
+
+    .trainer-text-container-irina {
+        padding-right: 12%;
+        padding-left: 5%;
+    }
+
+    .trainers-instructors-info {
+        padding: 1.5rem 8% 1.5rem 16%;
+        gap: 0.5rem;
+    }
+
+    .team-role {
+        font-size: 10px;
+        padding: 5px 9px;
+    }
+}
+
+@media (max-width: 600px) {
+    .team-behind-scenes {
+        margin-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    .team-behind-scenes-intro {
+        min-height: 14rem;
+        margin-bottom: 4rem;
+        padding: 3rem 1.5rem;
+    }
+
+    .team-behind-scenes-intro br {
+        display: none;
+    }
+
+    .team-support {
+        padding: 0 1rem;
+    }
+
+    .team-support-card,
+    .team-support-card-reverse {
+        grid-template-columns: 40% 60%;
+        min-height: 19rem;
+    }
+
+    .team-support-portrait img {
+        height: 21rem;
+        max-width: 100%;
+    }
+
+    .team-support-info {
+        padding: 2rem 8% 2rem 16%;
+    }
+
+    .team-support-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .team-support-info p {
+        font-size: 0.8rem;
+    }
+
+    .team-support-card-reverse {
+        grid-template-columns: 60% 40%;
+    }
+
+    .team-support-card-reverse .team-support-info {
+        padding: 2rem 18% 2rem 10%;
+    }
+
+    .team-support-quote {
+        min-height: 15rem;
+        height: auto;
+        box-sizing: border-box;
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-width: 475px) {
+    .section-trainer-yaroslav,
+    .section-trainer-irina,
+    .section-trainer-elena {
+        height: auto;
+        min-height: 24rem;
+    }
+
+    .trainer-text-container,
+    .trainer-text-container-irina {
+        padding: 1.5rem 0;
+    }
+
+    .trainer-content {
+        min-height: inherit;
+    }
+
+    .trainer-text-container h2 {
+        font-size: 1.3rem;
+    }
+
+    .trainer-text-container p {
+        line-height: 1.4;
+    }
+
+    .article-trainers-instructors .header-text-trainers-instructors-maxim {
+        /*min-height: 36rem;*/
+        height: auto;
+    }
+
+    .trainers-instructors-info {
+        height: auto;
+        padding: 1.5rem 5% 1.5rem 15%;
+        clip-path: none;
+    }
+
+    .trainers-instructors-info p {
+        font-size: 0.75rem;
+        line-height: 1.4;
+    }
+
+    .trainers-instructors-info h3 {
+        font-size: 1.3rem;
+    }
+}
