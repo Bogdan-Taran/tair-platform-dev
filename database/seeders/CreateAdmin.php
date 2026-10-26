@@ -16,24 +16,29 @@ class CreateAdmin extends Seeder
      */
     public function run(): void
     {
-        $admin = User::create([
-            'firstname' => 'admin',
-            'lastname' => 'admin',
-            'patronymic' => 'admin',
-            'phone' => '89528003535',
-            'birthdate' => '1900-01-01',
-            'email' => 'admin@mail.ru',
-            'password' => Hash::make('admin'),
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
-        ]);
+        $admin = User::updateOrCreate(
+            ['email' => 'admin@mail.ru'],
+            [
+                'firstname' => 'admin',
+                'lastname' => 'admin',
+                'patronymic' => 'admin',
+                'phone' => '89528003535',
+                'birthdate' => '1900-01-01',
+                'password' => Hash::make('admin'),
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
 
-        Role::create([
+        $adminRole = Role::firstOrCreate([
             'name' => 'admin',
-            'created_at' => Carbon::now(),
-            'updated_at' => Carbon::now(),
+            'guard_name' => 'web',
         ]);
+//        Role::create([
+//            'name' => 'admin',
+//            'created_at' => Carbon::now(),
+//            'updated_at' => Carbon::now(),
+//        ]);
 
-        $admin->assignRole('admin');
+        $admin->assignRole($adminRole);
     }
 }
