@@ -9,6 +9,23 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 
+\Illuminate\Support\Facades\Route::get('/health', function () {
+    try {
+        \Illuminate\Support\Facades\DB::select('SELECT 1');
+
+        return response()
+            ->json(['status' => 'ok'], 200)
+            ->header('Cache-Control', 'no-store');
+    } catch (\Throwable $e) {
+        report($e);
+
+        return response()
+            ->json(['status' => 'error'], 503)
+            ->header('Cache-Control', 'no-store');
+    }
+});
+
+
 Route::middleware(['throttle:3,1'])->group(function () {
     Route::get('/', [MainController::class, 'index'])->name('index');
 });
