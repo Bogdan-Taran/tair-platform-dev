@@ -23,6 +23,7 @@
     @endauth
 
 
+    <link rel="stylesheet" href="{{ asset('frontend/css/auth-forms.css') }}">
     @stack('styles')
 
     <!-- Scripts -->
@@ -44,15 +45,19 @@
 
 @auth
     <div class="sidenav">
-        <a href="{{ route('dashboard') }}" class="{{ Route::is('dashboard') ? 'active' : '' }}">Профиль</a>
-        <a href="{{ route('documents') }}" class="{{ Route::is('documents') ? 'active' : '' }}">Документы</a>
+        <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">Профиль</a>
+        <a href="{{ route('documents') }}" class="{{ request()->routeIs('documents') ? 'active' : '' }}">Документы</a>
     </div>
 @endauth
 
+@guest
 @include('components.register-modal')
 @include('components.login-modal')
+@include('components.forgot-password-modal')
+@endguest
 
 @yield('main-content')
+@isset($slot)<main class="main account-form">{{ $slot }}</main>@endisset
 
 
 @include('layouts.footer')

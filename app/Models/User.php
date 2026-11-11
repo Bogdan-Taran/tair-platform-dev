@@ -11,16 +11,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
-#[Fillable(['firstname', 'lastname', 'patronymic','email', 'phone', 'birthdate', 'password'])]
+#[Fillable(['firstname', 'lastname', 'patronymic', 'email', 'phone', 'birthdate', 'password'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
     /** @use HasFactory<UserFactory> */
-    use HasFactory, Notifiable, HasRoles;
-
-    protected $fillable = [
-        'address',
-    ];
+    use HasFactory, HasRoles, Notifiable;
 
     /**
      * Get the attributes that should be cast.
@@ -34,13 +30,17 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
     public function children()
     {
         return $this->hasMany(Child::class);
     }
-    public function passportDetail(){
+
+    public function passportDetail()
+    {
         return $this->hasOne(PassportDetail::class);
     }
+
     public function contracts()
     {
         return $this->hasMany(Contract::class);

@@ -51,7 +51,7 @@
                     мышц тела, суставов, связок, профилактики остеохондроза, плоскостопия, болей в шее от
                     квалифицированного
                     тренера</p>
-                <a href="/index.html#directions" class="cta-button button-base cta-button-about-club-sign-up">ПОДРОБНЕЕ
+                <a href="{{ route('index') }}#directions" class="cta-button button-base cta-button-about-club-sign-up">ПОДРОБНЕЕ
                     О НАПРАВЛЕНИЯХ</a>
             </div>
         </div>

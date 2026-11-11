@@ -25,6 +25,18 @@ class LoginRequest extends FormRequest
      *
      * @return array<string, ValidationRule|array<mixed>|string>
      */
+    protected function prepareForValidation(): void
+    {
+        if (is_string($this->input('email'))) {
+            $this->merge(['email' => mb_strtolower(trim($this->input('email')))]);
+        }
+    }
+
+    public function messages(): array
+    {
+        return ['email.required' => 'Введите почту.', 'email.email' => 'Введите корректную почту.', 'password.required' => 'Введите пароль.'];
+    }
+
     public function rules(): array
     {
         return [
@@ -46,7 +58,7 @@ class LoginRequest extends FormRequest
             RateLimiter::hit($this->throttleKey());
 
             throw ValidationException::withMessages([
-                'email' => trans('auth.failed'),
+                'email' => 'Неверная почта или пароль.',
             ]);
         }
 
@@ -69,10 +81,7 @@ class LoginRequest extends FormRequest
         $seconds = RateLimiter::availableIn($this->throttleKey());
 
         throw ValidationException::withMessages([
-            'email' => trans('auth.throttle', [
-                'seconds' => $seconds,
-                'minutes' => ceil($seconds / 60),
-            ]),
+            'email' => "Слишком много попыток входа. Повторите через {$seconds} сек.",
         ]);
     }
 

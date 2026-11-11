@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -29,13 +30,16 @@ class NewPasswordController extends Controller
      *
      * @throws ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request): RedirectResponse|JsonResponse
     {
+        if (is_string($request->input('email'))) {
+            $request->merge(['email' => mb_strtolower(trim($request->input('email')))]);
+        }
         $request->validate([
-            'token' => ['required'],
-            'email' => ['required', 'email'],
+            'token' => ['required', 'string'],
+            'email' => ['required', 'string', 'email'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        ], ['required' => 'Заполните поле «:attribute».', 'password.confirmed' => 'Пароли не совпадают.', 'password.min' => 'Пароль должен содержать не менее :min символов.', 'email.email' => 'Введите корректную почту.']);
 
         // Here we will attempt to reset the user's password. If it is successful we
         // will update the password on an actual user model and persist it to the
@@ -52,12 +56,14 @@ class NewPasswordController extends Controller
             }
         );
 
-        // If the password was successfully reset, we will redirect the user back to
-        // the application's home authenticated view. If there is an error we can
-        // redirect them back to where they came from with their error message.
-        return $status == Password::PASSWORD_RESET
-                    ? redirect()->route('login')->with('status', __($status))
-                    : back()->withInput($request->only('email'))
-                        ->withErrors(['email' => __($status)]);
+        if ($status !== Password::PASSWORD_RESET) {
+            throw ValidationException::withMessages(['email' => 'Ссылка недействительна или устарела. Запросите новую ссылку.']);
+        }
+        $message = 'Пароль изменён. Войдите с новым паролем.';
+        $request->session()->flash('status', $message);
+
+        return $request->expectsJson()
+            ? response()->json(['status' => 'success', 'redirect' => route('login', absolute: false)])
+            : redirect()->route('login');
     }
 }

@@ -40,7 +40,7 @@
             Реквизиты сторон
         </h3>
 
-        <form action="{{route('sign-contract')}}" method="post">
+        <form action="{{route('sign-contract.store')}}" method="post">
             @csrf
             <div class="contract-sides-block">
                 <div class="side-block">

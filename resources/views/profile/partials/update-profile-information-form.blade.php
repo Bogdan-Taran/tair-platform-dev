@@ -17,11 +17,13 @@
         @csrf
         @method('patch')
 
-        <div>
-            <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('name')" />
-        </div>
+        @foreach(['firstname' => 'Имя', 'lastname' => 'Фамилия', 'patronymic' => 'Отчество'] as $field => $label)
+            <div>
+                <label for="profile-{{ $field }}">{{ $label }}</label>
+                <input id="profile-{{ $field }}" name="{{ $field }}" type="text" value="{{ old($field, $user->$field) }}" required>
+                <x-input-error :messages="$errors->get($field)" />
+            </div>
+        @endforeach
 
         <div>
             <x-input-label for="email" :value="__('Email')" />

@@ -119,7 +119,7 @@
 
 
                 @guest()
-                    <li><a href="{{ route('login') }}"><img class="profile-icon"
+                    <li><a href="{{ route('login') }}" data-auth-open="login"><img class="profile-icon"
                                                                 src="{{ url('frontend/src/assets/icons/profile-icon.svg')}}"
                                                                 alt="иконка профиля"></a></li>
                 @endguest

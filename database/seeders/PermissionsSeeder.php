@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -17,19 +16,18 @@ class PermissionsSeeder extends Seeder
     {
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
-        Permission::create(['name' => 'show all contracts']);
-        Permission::create(['name' => 'add child']);
-        Permission::create(['name' => 'edit child']);
-        Permission::create(['name' => 'store child']);
-        Permission::create(['name' => 'delete child']);
-        Permission::create(['name' => 'sign contract']);
-        Permission::create(['name' => 'show my contract']);
-        Permission::create(['name' => 'show my children']);
-        Permission::create(['name' => 'show all children']);
+        Permission::firstOrCreate(['name' => 'show all contracts']);
+        Permission::firstOrCreate(['name' => 'add child']);
+        Permission::firstOrCreate(['name' => 'edit child']);
+        Permission::firstOrCreate(['name' => 'store child']);
+        Permission::firstOrCreate(['name' => 'delete child']);
+        Permission::firstOrCreate(['name' => 'sign contract']);
+        Permission::firstOrCreate(['name' => 'show my contract']);
+        Permission::firstOrCreate(['name' => 'show my children']);
+        Permission::firstOrCreate(['name' => 'show all children']);
 
-
-        $userRole = Role::create(['name' => 'user']);
-        $adminRole = Role::create(['name' => 'admin']);
+        $userRole = Role::firstOrCreate(['name' => 'user']);
+        $adminRole = Role::firstOrCreate(['name' => 'admin']);
 
         $userRole->givePermissionTo(['add child', 'edit child', 'store child', 'delete child', 'sign contract', 'show my contract', 'show my children']);
         $adminRole->givePermissionTo(Permission::all());

@@ -3,59 +3,45 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterRequest;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
-use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class RegisteredUserController extends Controller
 {
-    /**
-     * Display the registration view.
-     */
     public function create(): View
     {
         return view('auth.register');
     }
 
-    /**
-     * Handle an incoming registration request.
-     *
-     * @throws ValidationException
-     */
-    public function store(Request $request): RedirectResponse
+    public function store(RegisterRequest $request): RedirectResponse|JsonResponse
     {
-        $request->validate([
-            'firstname' => ['required', 'string', 'max:255'],
-            'lastname' => ['required', 'string', 'max:255'],
-            'patronymic' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
-            'phone' => ['required', 'string', 'max:20'],
-            'birthdate' => ['required', 'date'],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
-        ]);
+        $user = DB::transaction(function () use ($request): User {
+            $role = Role::firstOrCreate(['name' => 'user', 'guard_name' => 'web']);
+            if ($role->wasRecentlyCreated) {
+                foreach (['add child', 'edit child', 'store child', 'delete child', 'sign contract', 'show my contract', 'show my children'] as $permission) {
+                    $role->givePermissionTo(Permission::findOrCreate($permission, 'web'));
+                }
+            }
+            $user = User::create($request->safe()->except('agreement'));
+            $user->assignRole($role);
 
-        $user = User::create([
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'patronymic' => $request->patronymic,
-            'email' => $request->email,
-            'phone' => $request->phone,
-            'birthdate' => $request->birthdate,
-            'password' => Hash::make($request->password),
-        ]);
-
-        $user->assignRole('user');
+            return $user;
+        });
 
         event(new Registered($user));
-
         Auth::login($user);
+        $request->session()->regenerate();
 
-        return redirect(route('dashboard', absolute: false));
+        return $request->expectsJson()
+            ? response()->json(['status' => 'success', 'redirect' => route('dashboard', absolute: false)], 201)
+            : redirect()->route('dashboard');
     }
 }

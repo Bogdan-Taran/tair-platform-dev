@@ -14,6 +14,7 @@ class RoleController extends Controller
     public function index()
     {
         $roles = Role::orderBy('name')->where('name', '!=', 'admin')->get();
+
         return view('roles.index', compact('roles'));
     }
 
@@ -23,6 +24,7 @@ class RoleController extends Controller
     public function create()
     {
         $permissions = Permission::orderBy('name')->get();
+
         return view('roles.create', compact(['permissions']));
     }
 
@@ -32,12 +34,13 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-           'name' => 'required|max:255',
+            'name' => 'required|string|max:255|unique:roles,name',
+            'permissions' => 'nullable|array',
             'permissions.*' => 'required|exists:permissions,id|integer',
         ]);
 
         $newRole = Role::create(['name' => $request->name]);
-        $permissions = Permission::whereIn('id', $request->permissions)->get();
+        $permissions = Permission::whereIn('id', ($request->input('permissions', [])))->get();
         $newRole->syncPermissions($permissions);
 
         return redirect()->back()->with('status', 'Роль добавлена!');
@@ -46,7 +49,7 @@ class RoleController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(\Spatie\Permission\Models\Role $role)
+    public function show(Role $role)
     {
         //
     }

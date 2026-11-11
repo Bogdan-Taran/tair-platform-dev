@@ -1,0 +1,21 @@
+@font-face { font-family: Oswald; src: url('../fonts/Oswald.ttf') format('truetype'); font-display: swap; }
+* { box-sizing: border-box; }
+body.error-page { margin: 0; background: #660207; color: white; font-family: Oswald, sans-serif; }
+.error-page main { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; }
+.error-scene { position: relative; width: 100%; max-width: 120rem; margin-inline: auto; aspect-ratio: 16 / 9; overflow: hidden; }
+.error-scene::after { content: ''; position: absolute; inset: 0 0 auto; height: 15%; background: linear-gradient(#000c, transparent); pointer-events: none; }
+.error-figure { position: absolute; width: 76%; height: 96.1%; top: -4.35%; left: 13.9%; overflow: hidden; }
+.error-figure img { position: absolute; width: 98.46%; height: 97.24%; top: 2.76%; left: -.02%; }
+.error-shadow { position: absolute; left: 12.8%; top: 78.4%; width: 78.2%; height: 18.15%; background: url('../src/img/errors/shadow.svg') center / contain no-repeat; }
+.error-scene h1 { position: absolute; top: 77.5%; left: 0; right: 0; margin: 0; font-size: clamp(3rem, 6.667vw, 8rem); font-weight: 400; line-height: .9; text-align: center; }
+.error-scene p { position: absolute; top: 89.44%; left: 4%; right: 4%; margin: 0; font-size: clamp(1.1rem, 2.552vw, 3.0625rem); text-align: center; line-height: 1.1; }
+.error-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; padding: 1.25rem; }
+.error-actions a { color: #fff; font-size: 1.1rem; text-underline-offset: .3rem; }
+.error-actions a:focus-visible { outline: .125rem solid #fff; outline-offset: .4rem; }
+@media (max-width: 40rem) {
+    .error-scene { aspect-ratio: 3 / 4; }
+    .error-figure { top: 0; left: -12%; width: 124%; height: 72%; }
+    .error-scene h1 { top: 70%; font-size: 5rem; }
+    .error-scene p { top: 85%; font-size: 1.65rem; }
+    .error-shadow { top: 64%; left: 0; width: 100%; height: 20%; }
+}

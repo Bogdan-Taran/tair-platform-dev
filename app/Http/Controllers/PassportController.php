@@ -6,11 +6,15 @@ use Illuminate\Http\Request;
 
 class PassportController extends Controller
 {
-    public function edit(){
-        $passport = auth()->user()->passportDetails;
+    public function edit()
+    {
+        $passport = auth()->user()->passportDetail;
+
         return view('passport.edit', compact('passport'));
     }
-    public function update(Request $request){
+
+    public function update(Request $request)
+    {
         $validated = $request->validate([
             'series' => 'required|string|max:4|min:4|regex:/^[0-9]{4}$/',
             'number' => 'required|string|max:6|min:6|regex:/^[0-9]{6}$/',
@@ -27,7 +31,7 @@ class PassportController extends Controller
             ['user_id' => auth()->id()],
             $validated
         );
-        return redirect()->route('documents')->with('status', 'Паспотные данны успешно сохранены!');
-    }
 
+        return redirect()->route('documents')->with('status', 'Паспортные данные успешно сохранены!');
+    }
 }

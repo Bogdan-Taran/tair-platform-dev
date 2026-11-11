@@ -7,16 +7,17 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\PassportController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoleController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
-\Illuminate\Support\Facades\Route::get('/health', function () {
+Route::get('/health', function () {
     try {
-        \Illuminate\Support\Facades\DB::select('SELECT 1');
+        DB::select('SELECT 1');
 
         return response()
             ->json(['status' => 'ok'], 200)
             ->header('Cache-Control', 'no-store');
-    } catch (\Throwable $e) {
+    } catch (Throwable $e) {
         report($e);
 
         return response()
@@ -25,10 +26,8 @@ use Illuminate\Support\Facades\Route;
     }
 });
 
-
-Route::middleware(['throttle:3,1'])->group(function () {
-    Route::get('/', [MainController::class, 'index'])->name('index');
-});
+Route::get('/', [MainController::class, 'index'])->name('index');
+Route::redirect('/index.html', '/');
 Route::get('/dos-test', function () {
     return 'OK';
 })->middleware('custom.throttle');
@@ -53,14 +52,14 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AccountController::class, 'dashboard'])->middleware(['auth', 'verified'])->name('dashboard');
     Route::get('/documents', [AccountController::class, 'documents'])->middleware(['auth', 'verified'])->name('documents');
     Route::get('/sign-contract', [AccountController::class, 'signContract'])->middleware(['auth', 'verified'])->name('sign-contract');
-    Route::post('/sign-contract', [ContractController::class, 'signContract'])->middleware(['auth', 'verified'])->name('sign-contract');
+    Route::post('/sign-contract', [ContractController::class, 'signContract'])->middleware('verified')->name('sign-contract.store');
 
     Route::get('/passport', [PassportController::class, 'edit'])->middleware(['auth', 'verified'])->name('passport.edit');
     Route::post('/passport', [PassportController::class, 'update'])->middleware(['auth', 'verified'])->name('passport.update');
 
     Route::get('add-child', [AccountController::class, 'addChild'])->name('add-child')->middleware('can:add child');
     Route::post('store-child', [AccountController::class, 'storeChild'])->name('store-child')->middleware('can:store child');
-    Route::resource('roles', RoleController::class);
+    Route::resource('roles', RoleController::class)->only(['index', 'create', 'store'])->middleware('can:manage roles');
 });
 
 require __DIR__.'/auth.php';
