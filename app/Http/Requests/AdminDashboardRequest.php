@@ -15,6 +15,9 @@ class AdminDashboardRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'status' => ['nullable', Rule::in(['active', 'expired', 'revoked', 'missing'])],
+            'min_age' => ['nullable', 'integer', 'min:0', 'max:120'],
+            'max_age' => ['nullable', 'integer', 'min:0', 'max:120', Rule::when($this->filled('min_age'), 'gte:min_age')],
             'section' => ['nullable', Rule::in(['contracts', 'parents', 'children'])],
             'branch' => ['nullable', 'integer', 'exists:branches,id'],
             'q' => ['nullable', 'string', 'max:150'],
@@ -26,6 +29,9 @@ class AdminDashboardRequest extends FormRequest
     public function messages(): array
     {
         return [
+            'status' => ['nullable', Rule::in(['active', 'expired', 'revoked', 'missing'])],
+            'min_age' => ['nullable', 'integer', 'min:0', 'max:120'],
+            'max_age' => ['nullable', 'integer', 'min:0', 'max:120', Rule::when($this->filled('min_age'), 'gte:min_age')],
             'section.in' => 'Выберите существующий раздел.',
             'branch.exists' => 'Выберите существующий филиал.',
             'branch.integer' => 'Выберите существующий филиал.',

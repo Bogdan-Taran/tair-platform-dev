@@ -31,6 +31,7 @@ class RegisteredUserController extends Controller
                 }
             }
             $user = User::create($request->safe()->except('agreement'));
+            $user->forceFill(['terms_accepted_at' => now(), 'terms_version' => 'registration-2026-11-12'])->save();
             $user->assignRole($role);
 
             return $user;

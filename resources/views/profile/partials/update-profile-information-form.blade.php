@@ -1,66 +1,12 @@
-<section>
-    <header>
-        <h2 class="text-lg font-medium text-gray-900">
-            {{ __('Profile Information') }}
-        </h2>
-
-        <p class="mt-1 text-sm text-gray-600">
-            {{ __("Update your account's profile information and email address.") }}
-        </p>
-    </header>
-
-    <form id="send-verification" method="post" action="{{ route('verification.send') }}">
-        @csrf
-    </form>
-
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
-        @csrf
-        @method('patch')
-
-        @foreach(['firstname' => 'Имя', 'lastname' => 'Фамилия', 'patronymic' => 'Отчество'] as $field => $label)
-            <div>
-                <label for="profile-{{ $field }}">{{ $label }}</label>
-                <input id="profile-{{ $field }}" name="{{ $field }}" type="text" value="{{ old($field, $user->$field) }}" required>
-                <x-input-error :messages="$errors->get($field)" />
-            </div>
-        @endforeach
-
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
-            <x-input-error class="mt-2" :messages="$errors->get('email')" />
-
-            @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
-                <div>
-                    <p class="text-sm mt-2 text-gray-800">
-                        {{ __('Your email address is unverified.') }}
-
-                        <button form="send-verification" class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                            {{ __('Click here to re-send the verification email.') }}
-                        </button>
-                    </p>
-
-                    @if (session('status') === 'verification-link-sent')
-                        <p class="mt-2 font-medium text-sm text-green-600">
-                            {{ __('A new verification link has been sent to your email address.') }}
-                        </p>
-                    @endif
-                </div>
-            @endif
-        </div>
-
-        <div class="flex items-center gap-4">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
-
-            @if (session('status') === 'profile-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600"
-                >{{ __('Saved.') }}</p>
-            @endif
-        </div>
-    </form>
+<section><h1>Личные данные</h1>@include('components.form-feedback')
+<form method="post" action="{{ route('profile.update') }}">@csrf @method('patch')
+@foreach(['firstname'=>'Имя','lastname'=>'Фамилия','patronymic'=>'Отчество','email'=>'Почта','phone'=>'Телефон','birthdate'=>'Дата рождения'] as $name=>$label)
+<label for="profile-{{ $name }}">{{ $label }}</label><input id="profile-{{ $name }}" name="{{ $name }}" type="{{ $name==='birthdate'?'date':($name==='email'?'email':'text') }}" value="{{ old($name,$user->$name) }}" @required($name!=='patronymic')>
+@endforeach
+<label for="profile-type">Тип профиля</label><select id="profile-type" name="account_type"><option value="parent">Родитель</option><option value="athlete" @selected(old('account_type',$user->account_type)==='athlete')>Совершеннолетний спортсмен</option></select>
+<button>Сохранить</button><a href="{{ route('dashboard') }}">В кабинет</a></form>
+@if($user->pending_email)<p>Ожидает подтверждения: {{ $user->pending_email }}</p><form method="post" action="{{ route('profile.email.resend') }}">@csrf<button>Повторить письмо подтверждения</button></form>@endif
+<h2>Фото профиля</h2>@if($user->avatar_path)<img class="account-avatar" src="{{ route('avatar.show') }}" alt="Ваш аватар">@endif
+<form method="post" action="{{ route('avatar.store') }}" enctype="multipart/form-data">@csrf<label for="avatar">JPEG, PNG или WebP до 5 МБ</label><input id="avatar" type="file" name="avatar" accept="image/jpeg,image/png,image/webp" required><button>Обновить фото</button></form>
+@if($user->avatar_path)<form method="post" action="{{ route('avatar.destroy') }}">@csrf @method('delete')<button>Удалить фото</button></form>@endif
 </section>

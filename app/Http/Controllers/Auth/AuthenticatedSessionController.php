@@ -28,6 +28,7 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        $request->session()->put('account_session_version', $request->user()->session_version);
         $redirect = redirect()->intended(route('dashboard', absolute: false));
         if ($request->expectsJson()) {
             return response()->json([

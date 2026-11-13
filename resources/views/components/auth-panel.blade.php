@@ -17,15 +17,16 @@
         @if($mode === 'reset')<p>Придумайте новый пароль длиной не менее 8 символов.</p>@endif
         <form method="post" action="{{ route($actions[$mode]) }}" data-auth-form>
             @csrf
+            @if($mode === 'register')<label for="{{ $prefix }}-type">Тип профиля</label><select id="{{ $prefix }}-type" name="account_type"><option value="parent">Родитель</option><option value="athlete" @selected(old('account_type') === 'athlete')>Совершеннолетний спортсмен</option></select>@endif
             <input type="hidden" name="_auth_form" value="{{ $mode }}">
             @if($mode === 'reset')<input type="hidden" name="token" value="{{ request()->route('token') }}">@endif
             <p class="auth-feedback" role="status" aria-live="polite" data-auth-feedback @if(!session('status')) hidden @endif>{{ session('status') }}</p>
             @foreach($fields as $name => [$label, $type, $autocomplete])
                 <div class="auth-field">
                     <label for="{{ $prefix }}-{{ $name }}">{{ $label }}</label>
-                    <input id="{{ $prefix }}-{{ $name }}" name="{{ $name }}" type="{{ $type }}" autocomplete="{{ $autocomplete }}" placeholder="{{ $label }}" required
+                    <input id="{{ $prefix }}-{{ $name }}" name="{{ $name }}" type="{{ $type }}" autocomplete="{{ $autocomplete }}" placeholder="{{ $label }}" @required($name !== 'patronymic')
                         @if($type !== 'password') value="{{ $showErrors ? old($name, $mode === 'reset' && $name === 'email' ? request()->query('email') : '') : '' }}" @endif
-                        @if($name === 'birthdate') max="{{ now()->subDay()->toDateString() }}" @endif
+                        @if($name === 'birthdate') max="{{ now()->subYears(18)->toDateString() }}" @endif
                         @if($name === 'phone') maxlength="20" @endif
                         @if($type === 'password' && $mode !== 'login') minlength="8" @endif
                         aria-describedby="{{ $prefix }}-error-{{ $name }}">

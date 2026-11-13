@@ -4,13 +4,14 @@
 
     <main class="main">
 
+        @include('components.form-feedback')
         <div class="all-blocks">
             <div class="three-blocks">
                 <div class="profile-blocks-info">
                     <div class="profile-info-block">
                         <img src="{{ url('frontend/src/assets/icons/edit-icon.svg')}}" alt="Изменить иконка"
-                             class="edit-icon">
-                        <div class="profile-photo"><img src="{{ url('frontend/src/img/about-club-image.png')}}"
+                             class="edit-icon"><a href="{{ route('profile.edit') }}">Редактировать профиль</a>
+                        <div class="profile-photo"><img src="{{ $current_user->avatar_path ? route('avatar.show') : url('frontend/src/img/about-club-image.png') }}"
                                                         alt="Боец ТАИР в клетке на ММА"></div>
                         <div class="profile-info-details">
                             <h3 class="block-header">{{ $current_user->firstname }} {{ $current_user->lastname }} {{ $current_user->patronymic }} </h3>
@@ -36,7 +37,7 @@
                         <h3 class="block-header">Дети</h3>
                         @forelse($user_children as $child)
                         <div class="child-item">
-                            <h4 class="child-fio">{{ $child->firstname }} {{ $child->lastname }} {{ $child->patronymic }}</h4>
+                            <a href="{{ route('children.edit',$child) }}">{{ $child->archived_at ? 'Архив — восстановить' : 'Редактировать' }}</a><h4 class="child-fio">{{ $child->firstname }} {{ $child->lastname }} {{ $child->patronymic }}</h4>
                             <div class="property-info-block">
                                 <p class="property-text">Дата рождения</p>
                                 <p class="info-text">{{ \Carbon\Carbon::parse($child->birthdate)->format('d.m.Y') }}г.</p>

@@ -36,11 +36,11 @@ document.querySelectorAll('.faq-question').forEach(question => {
 
 //переходы по страницам
 function goToPageSummerCampBeret() {
-    window.location.href = "pages/summer-camp-beret.blade.php";
+    window.location.href = "/summer-camp-beret";
 }
 
 function goToPageHallsAdventure(){
-    window.location.href = "pages/our-branches.blade.php";
+    window.location.href = "/our-branches";
 }
 function scrollToTop() {
     window.scrollTo({
@@ -83,11 +83,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //позвонить на телефон
 
-document.getElementById('call-btn-1').addEventListener('click', function() {
+document.getElementById('call-btn-1')?.addEventListener('click', function() {
     const phoneNumber = this.getAttribute('data-phone');
     window.location.href = `tel:${phoneNumber}`;
 });
-document.getElementById('call-btn-2').addEventListener('click', function() {
+document.getElementById('call-btn-2')?.addEventListener('click', function() {
     const phoneNumber = this.getAttribute('data-phone');
     window.location.href = `tel:${phoneNumber}`;
 });

@@ -42,3 +42,7 @@
     .auth-page-main, .auth-overlay { padding: 1rem; }
     .auth-panel--register .auth-content h1 { margin-bottom: 1.25rem; }
 }
+
+.account-form { max-width: 65rem; margin: 2rem auto; padding: 1.5rem; } .account-form select, .auth-panel select { display:block; width:100%; padding:.8rem; margin:.5rem 0 1rem; color:#fff; background:#161616; border:.0625rem solid #aaa; border-radius:.5rem; } .account-record { padding:1.25rem; margin:1rem 0; border:.0625rem solid #666; border-radius:1rem; } .account-avatar { width:8rem; height:8rem; object-fit:cover; border-radius:50%; } .account-form form { margin-block:1.5rem; } .account-form a { color:inherit; text-decoration:underline; }
+
+.document-body { white-space:pre-wrap; overflow-wrap:anywhere; line-height:1.6; padding-block:1.5rem; } .account-form textarea { width:100%; min-height:6rem; color:#fff; background:#161616; border:.0625rem solid #aaa; padding:.75rem; }

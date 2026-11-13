@@ -3,7 +3,9 @@
 namespace Tests\Feature;
 
 use App\Models\User;
+use App\Notifications\ConfirmEmailChange;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 
 class ProfileTest extends TestCase
@@ -23,11 +25,13 @@ class ProfileTest extends TestCase
 
     public function test_profile_information_can_be_updated(): void
     {
+        Notification::fake();
         $user = User::factory()->create();
+        $oldEmail = $user->email;
 
         $response = $this
             ->actingAs($user)
-            ->patch('/profile', [
+            ->from('/profile')->patch('/profile', [
                 'firstname' => 'Анна',
                 'lastname' => 'Иванова',
                 'patronymic' => 'Петровна',
@@ -41,17 +45,20 @@ class ProfileTest extends TestCase
         $user->refresh();
 
         $this->assertSame('Анна', $user->firstname);
-        $this->assertSame('test@example.com', $user->email);
-        $this->assertNull($user->email_verified_at);
+        $this->assertSame($oldEmail, $user->email);
+        $this->assertSame('test@example.com', $user->pending_email);
+        Notification::assertSentOnDemand(ConfirmEmailChange::class);
     }
 
     public function test_email_verification_status_is_unchanged_when_the_email_address_is_unchanged(): void
     {
+        Notification::fake();
         $user = User::factory()->create();
+        $oldEmail = $user->email;
 
         $response = $this
             ->actingAs($user)
-            ->patch('/profile', [
+            ->from('/profile')->patch('/profile', [
                 'firstname' => 'Анна',
                 'lastname' => 'Иванова',
                 'patronymic' => 'Петровна',

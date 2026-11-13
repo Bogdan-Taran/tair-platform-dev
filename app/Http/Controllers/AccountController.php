@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Child;
-use Carbon\Carbon;
+use App\Models\DocumentTemplate;
 use Illuminate\Http\Request;
 
 class AccountController extends Controller
@@ -32,18 +32,9 @@ class AccountController extends Controller
 
     public function signContract()
     {
-        $user = auth()->user();
+        $template = DocumentTemplate::where('kind', 'contract')->whereNotNull('published_at')->latest('id')->first();
 
-        $latestContract = $user->contracts()->latest('sign_date')->first();
-        if ($latestContract) {
-            $expiration_date = Carbon::parse($latestContract->sign_date)->addYear();
-            if ($expiration_date->greaterThan(now())) {
-                return redirect()->route('documents')->with('status', 'У вас уже есть действующий договор до '.$expiration_date->format('d.m.Y'));
-            }
-        }
-        $passport = $user->passportDetail;
-
-        return view('sign-contract', compact('user', 'passport'));
+        return $template ? redirect()->route('documents.preview', $template) : view('documents.unavailable');
     }
 
     public function addChild(Request $request)

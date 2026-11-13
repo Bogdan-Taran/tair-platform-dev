@@ -11,7 +11,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\Permission\Traits\HasRoles;
 
-#[Fillable(['firstname', 'lastname', 'patronymic', 'email', 'phone', 'birthdate', 'password'])]
+#[Fillable(['firstname', 'lastname', 'patronymic', 'email', 'phone', 'birthdate', 'password', 'account_type'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -28,6 +28,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'blocked_at' => 'datetime',
+            'session_version' => 'integer',
         ];
     }
 
