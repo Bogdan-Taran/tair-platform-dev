@@ -131,9 +131,9 @@
                                 <img src="{{ url('frontend/src/assets/coach-icon.png')}}" alt="тренер"
                                      class="branch-info-icon">
                                 <div class="column">
-                                    <span>Ярослав Таран</span>
+                                    <span>Таран Ярослав</span>
                                     <span>Некрасова Ирина</span>
-                                    <span>Максим Кашников</span>
+{{--                                    <span>Максим Кашников</span>--}}
                                 </div>
                             </div>
                             <div class="info-item">
@@ -163,9 +163,9 @@
                                 <img src="{{ url('frontend/src/assets/coach-icon.png')}}" alt="тренер"
                                      class="branch-info-icon">
                                 <div class="column">
-                                    <span>Ярослав Таран</span>
-                                    <span>Максим Кашников</span>
-                                    <span>Савелий Бусыгин</span>
+                                    <span>Таран Ярослав</span>
+{{--                                    <span>Кашников Максим</span>--}}
+{{--                                    <span>Савелий Бусыгин</span>--}}
                                 </div>
 
                             </div>
@@ -182,19 +182,19 @@
                 <!-- филиал 3 -->
                 <div class="last-branch-card">
                     <article class="branch-card">
-                        <h3>СК "МЕТЕОР"</h3>
+                        <h3>ШКОЛА №35</h3>
                         <div class="branch-info">
                             <div class="info-item">
                                 <img src="{{ url('frontend/src/assets/point-icon.png')}}" alt="метка"
                                      class="branch-info-icon">
-                                <span>СК “Метеор” Ул. Калужская 17/2</span>
+                                <span>Ул. Б. Хмельницкого, 40</span>
                             </div>
                             <div class="info-item">
                                 <img src="{{ url('frontend/src/assets/coach-icon.png')}}" alt="тренер"
                                      class="branch-info-icon">
                                 <div class="column">
-                                    <span>Ярослав Таран</span>
-                                    <span>Максим Кашников</span>
+{{--                                    <span>Ярослав Таран</span>--}}
+                                    <span>Кашников Максим</span>
                                 </div>
 
                             </div>
@@ -202,7 +202,6 @@
                                 <img src="{{ url('frontend/src/assets/phone-icon.png')}}" alt="телефон"
                                      class="branch-info-icon">
                                 <span>+7 952 889 45 15</span>
-                            </div>
                         </div>
                         <img src="{{ url('frontend/src/img/branchs/blue-branch.png')}}" alt="Перчатки"
                              class="gloves-icon-black">
@@ -328,11 +327,11 @@
                             <td>
                                 <div class="group">
                                     <span class="group-name">Младшая группа</span>
-                                    <span class="group-time">19:00 — 20:00</span>
+                                    <span class="group-time">17:00 — 18:00</span>
                                 </div>
                                 <div class="group">
                                     <span class="group-name">Старшая группа</span>
-                                    <span class="group-time">20:00 — 21:30</span>
+                                    <span class="group-time">18:00 — 19:30</span>
                                 </div>
                             </td>
                         </tr>
@@ -375,7 +374,7 @@
                         </tr>
                         <!-- Ул. Калужская, 17/2 -->
                         <tr>
-                            <td class="row-label address-label">Ул. Калужская, 17/2</td>
+                            <td class="row-label address-label">Ул. Б. Хмельницкого, 40</td>
                             <td></td>
                             <td>
                                 <div class="group">
@@ -384,7 +383,7 @@
                                 </div>
                                 <div class="group">
                                     <span class="group-name">Старшая группа</span>
-                                    <span class="group-time">20:00 — 21:30</span>
+                                    <span class="group-time">20:00 — 21:00</span>
                                 </div>
                             </td>
                             <td></td>
@@ -395,18 +394,18 @@
                                 </div>
                                 <div class="group">
                                     <span class="group-name">Старшая группа</span>
-                                    <span class="group-time">20:00 — 21:30</span>
+                                    <span class="group-time">20:00 — 21:00</span>
                                 </div>
                             </td>
                             <td></td>
                             <td>
                                 <div class="group">
                                     <span class="group-name">Младшая группа</span>
-                                    <span class="group-time">17:00 — 18:00</span>
+                                    <span class="group-time">19:00 — 20:00</span>
                                 </div>
                                 <div class="group">
                                     <span class="group-name">Старшая группа</span>
-                                    <span class="group-time">18:00 — 19:00</span>
+                                    <span class="group-time">20:00 — 21:00</span>
                                 </div>
                             </td>
                         </tr>
